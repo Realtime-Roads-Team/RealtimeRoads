@@ -1,0 +1,22 @@
+{
+	"FileVersion": 3,
+	"EngineAssociation": "{7A0C7082-426D-52AF-B112-9C8D245DF74E}",
+	"Category": "",
+	"Description": "",
+	"Modules": [
+		{
+			"Name": "RealtimeRoads",
+			"Type": "Runtime",
+			"LoadingPhase": "Default"
+		}
+	],
+	"Plugins": [
+		{
+			"Name": "ModelingToolsEditorMode",
+			"Enabled": true,
+			"TargetAllowList": [
+				"Editor"
+			]
+		}
+	]
+}

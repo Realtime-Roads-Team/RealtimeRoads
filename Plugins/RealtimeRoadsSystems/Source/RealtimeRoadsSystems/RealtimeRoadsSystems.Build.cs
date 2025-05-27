@@ -27,8 +27,10 @@ public class RealtimeRoadsSystems : ModuleRules
 			"CoreUObject",
 			"Engine",
 			"InputCore",
-			"Projects"
-		});
+			"Projects",
+			"HoudiniEngine",
+			"HoudiniEngineRuntime"
+        });
 
 		// Editor-only modules
 		if (Target.bBuildEditor)
@@ -45,8 +47,9 @@ public class RealtimeRoadsSystems : ModuleRules
 		PrivateDependencyModuleNames.AddRange(new string[]
 		{
 			"Slate",
-			"SlateCore"
-		});
+			"SlateCore",
+            "HoudiniEngineEditor"
+        });
 
 		// Dynamically loaded modules (none currently)
 		DynamicallyLoadedModuleNames.AddRange(new string[] {});

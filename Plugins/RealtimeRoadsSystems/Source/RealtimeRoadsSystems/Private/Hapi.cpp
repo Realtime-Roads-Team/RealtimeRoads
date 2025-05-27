@@ -65,7 +65,7 @@ void AHapi::SpawnHDA()
 void AHapi::SetInitialParameters(UHoudiniPublicAPIAssetWrapper* Wrapper)
 {
     UE_LOG(LogTemp, Log, TEXT("Setting initial parameters..."));
-    Wrapper->SetIntParameterValue("copy_points", count); // Adjust based on your HDA parameter name
+    Wrapper->SetIntParameterValue("test", count); // Adjust based on your HDA parameter name
     // Example: AssetWrapper->SetFloatParameterValue("height", 5.0f);
 }
 

@@ -72,19 +72,9 @@ void FRealtimeRoadsSystemsModule::StartHapiButtonClicked()
 void FRealtimeRoadsSystemsModule::RegisterMenus()
 {
 	FToolMenuOwnerScoped OwnerScoped(this);
-
-	// Extend the Window menu
-	{
-		UToolMenu* Menu = UToolMenus::Get()->ExtendMenu("LevelEditor.MainMenu.RealtimeRoads");
-		FToolMenuSection& Section = Menu->FindOrAddSection("WindowLayout");
-
-		Section.AddMenuEntryWithCommandList(FRealtimeRoadsSystemsCommands::Get().PluginAction, PluginCommands);
-		Section.AddMenuEntryWithCommandList(FRealtimeRoadsSystemsCommands::Get().StartHAPIServerAction, PluginCommands);
-	}
-
 	// Extend the Toolbar menu
 	{
-		UToolMenu* ToolbarMenu = UToolMenus::Get()->ExtendMenu("LevelEditor.LevelEditorToolBar.PlayToolBar");
+		UToolMenu* ToolbarMenu = UToolMenus::Get()->ExtendMenu("LevelEditor.SecondaryToolbar");
 		FToolMenuSection& Section = ToolbarMenu->FindOrAddSection("PluginTools");
 
 		// Add toolbar buttons with command list correctly assigned

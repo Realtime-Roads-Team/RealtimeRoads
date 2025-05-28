@@ -1,84 +1,74 @@
 // Copyright (c) 2025 Morgan Skillicorn. All rights reserved.
 
-
 #include "Hapi.h"
-
 
 // Sets default values
 AHapi::AHapi()
-{
- 	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
-
+{ 
+    // You can turn this off to improve performance if you don't need it.
     PrimaryActorTick.bCanEverTick = false;
-    HoudiniAsset = nullptr;
-    AssetWrapper = nullptr;
-}
 
-
-// Called when the game starts or when spawned
-void AHapi::BeginPlay()
-{
-	Super::BeginPlay();
-	
-}
-
-// Called every frame
-void AHapi::Tick(float DeltaTime)
-{
-	Super::Tick(DeltaTime);
-
+    TestHDA = nullptr;
 }
 
 #if WITH_EDITOR
+void AHapi::StartHapi()
+{
+    if (!API->IsSessionValid())
+    {
+        UE_LOG(LogTemp, Warning, TEXT("Attempting to create HAPI session."));
+        API->CreateSession();
+    }
+    else
+    {
+        UE_LOG(LogTemp, Warning, TEXT("HAPI session already exists!"));
+    }
+}
+
 void AHapi::SpawnHDA()
 {
-    UE_LOG(LogTemp, Warning, TEXT("Spawning HDA"));
-
-    UHoudiniPublicAPI* API = UHoudiniPublicAPIBlueprintLib::GetAPI();
-    if (!API || !HoudiniAsset)
-    {
-        UE_LOG(LogTemp, Error, TEXT("Missing API or Houdini Asset."));
-        return;
-    }
-
-    if (!API->IsSessionValid())
-        API->CreateSession();
-
-    AssetWrapper = API->InstantiateAsset(HoudiniAsset, GetActorTransform());
-    if (!IsValid(AssetWrapper))
-    {
-        UE_LOG(LogTemp, Error, TEXT("Failed to instantiate asset."));
-        return;
-    }
-
-    UE_LOG(LogTemp, Warning, TEXT("Binding PreInstantiation"));
-    AssetWrapper->GetOnPreInstantiationDelegate().AddUniqueDynamic(this, &AHapi::SetInitialParameters);
-
-    UE_LOG(LogTemp, Warning, TEXT("Binding PostInstantiation"));
-    AssetWrapper->GetOnPostInstantiationDelegate().AddUniqueDynamic(this, &AHapi::SetInputs);
-
-    UE_LOG(LogTemp, Warning, TEXT("Binding PostProcessing"));
-    AssetWrapper->GetOnPostProcessingDelegate().AddUniqueDynamic(this, &AHapi::PrintOutputs);
+    // Load our HDA uasset
+    //UHoudiniAsset* const ExampleHDA = Cast<UHoudiniAsset>(StaticLoadObject(UHoudiniAsset::StaticClass(), nullptr, TEXT("/HoudiniEngine/Examples/hda/copy_to_curve_1_0.copy_to_curve_1_0")));
+    // Create an API wrapper instance for instantiating the HDA and interacting with it
+    UHoudiniPublicAPIAssetWrapper* const Wrapper = API->InstantiateAsset(TestHDA, FTransform::Identity);
 }
+
+void AHapi::TestInput()
+{
+    UHoudiniAsset* const ExampleHDA = TestHDA;
+
+    AssetWrapper = API->InstantiateAsset(ExampleHDA, FTransform::Identity);
+    
+    if (IsValid(AssetWrapper))
+    {
+        // Pre-instantiation is the earliest point where we can set parameter values
+        AssetWrapper->GetOnPreInstantiationDelegate().AddUniqueDynamic(this, &AHapi::SetInitialParameterValues);
+        // Jumping ahead a bit: we also want to configure inputs, but inputs are only available after instantiation
+ //       AssetWrapper->GetOnPostInstantiationDelegate().AddUniqueDynamic(this, &AHapi::SetInputs);
+        // Jumping ahead a bit: we also want to print the outputs after the node has cook and the plug-in has processed the output
+ //       AssetWrapper->GetOnPostProcessingDelegate().AddUniqueDynamic(this, &AHapi::PrintOutputs);
+    }
+}
+
+void AHapi::SetInitialParameterValues_Implementation(UHoudiniPublicAPIAssetWrapper* InWrapper)
+{
+    InWrapper->SetIntParameterValue(TEXT("test"), 5);
+    // Since we are done with setting the initial values, we can unbind from the delegate
+    InWrapper->GetOnPreInstantiationDelegate().RemoveDynamic(this, &AHapi::SetInitialParameterValues);
+}
+
+/*void AHapi::SetInputs(UHoudiniPublicAPIAssetWrapper* InWrapper)
+{
+    // Create an empty geometry input
+    UHoudiniPublicAPIGeoInput* const GeoInput = Cast<UHoudiniPublicAPIGeoInput>(InWrapper->CreateEmptyInput(UHoudiniPublicAPIGeoInput::StaticClass()));
+    // Load the cube static mesh asset
+    UStaticMesh* const Cube = Cast<UStaticMesh>(StaticLoadObject(UStaticMesh::StaticClass(), nullptr, TEXT("/Engine/BasicShapes/Cube.Cube")));
+    // Set the input object array for our geometry input, in this case containing only the cube
+    GeoInput->SetInputObjects({ Cube });
+    // Set the input on the instantiated HDA via the wrapper
+    InWrapper->SetInputAtIndex(0, GeoInput);
+    // TODO: Create curve input
+    // Since we are done with setting the initial values, we can unbind from the delegate
+    InWrapper->GetOnPostInstantiationDelegate().RemoveDynamic(this, &ACurveInputExample::SetInputs);
+}*/
 #endif
-
-void AHapi::SetInitialParameters(UHoudiniPublicAPIAssetWrapper* Wrapper)
-{
-    UE_LOG(LogTemp, Log, TEXT("Setting initial parameters..."));
-    Wrapper->SetIntParameterValue("test", count); // Adjust based on your HDA parameter name
-    // Example: AssetWrapper->SetFloatParameterValue("height", 5.0f);
-}
-
-void AHapi::SetInputs(UHoudiniPublicAPIAssetWrapper* Wrapper)
-{
-    UE_LOG(LogTemp, Log, TEXT("Setting inputs..."));
-    // Example: Attach geometry input, if needed
-}
-
-void AHapi::PrintOutputs(UHoudiniPublicAPIAssetWrapper* Wrapper)
-{
-    UE_LOG(LogTemp, Log, TEXT("Post-processing outputs..."));
-    Wrapper->Recook();
-    // Example: Access and log output objects from wrapper
-}
-

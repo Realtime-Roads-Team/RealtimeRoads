@@ -1,4 +1,5 @@
 // Copyright Epic Games, Inc. All Rights Reserved.
+// Copyright (c) 2025 Morgan Skillicorn. All rights reserved.
 
 #pragma once
 
@@ -19,4 +20,5 @@ public:
 
 public:
 	TSharedPtr< FUICommandInfo > PluginAction;
+	TSharedPtr< FUICommandInfo > StartHAPIServerAction;
 };

@@ -1,4 +1,5 @@
 // Copyright Epic Games, Inc. All Rights Reserved.
+// Copyright (c) 2025 Morgan Skillicorn. All rights reserved.
 
 #include "RealtimeRoadsSystems.h"
 #include "RealtimeRoadsSystemsStyle.h"
@@ -26,6 +27,11 @@ void FRealtimeRoadsSystemsModule::StartupModule()
 		FExecuteAction::CreateRaw(this, &FRealtimeRoadsSystemsModule::PluginButtonClicked),
 		FCanExecuteAction());
 
+	PluginCommands->MapAction(
+		FRealtimeRoadsSystemsCommands::Get().StartHAPIServerAction,
+		FExecuteAction::CreateRaw(this, &FRealtimeRoadsSystemsModule::StartHapiButtonClicked),
+		FCanExecuteAction());
+
 	UToolMenus::RegisterStartupCallback(FSimpleMulticastDelegate::FDelegate::CreateRaw(this, &FRealtimeRoadsSystemsModule::RegisterMenus));
 }
 
@@ -47,34 +53,46 @@ void FRealtimeRoadsSystemsModule::PluginButtonClicked()
 {
 	// Put your "OnButtonClicked" stuff here
 	FText DialogText = FText::Format(
-							LOCTEXT("Realtime Roads test button text", "This is a {0}"),
-							FText::FromString(TEXT("test"))
-					   );
+		LOCTEXT("Realtime Roads test button text", "This is a {0}"),
+		FText::FromString(TEXT("test"))
+	);
+	FMessageDialog::Open(EAppMsgType::Ok, DialogText);
+}
+
+void FRealtimeRoadsSystemsModule::StartHapiButtonClicked()
+{
+	// Put your "OnButtonClicked" stuff here
+	FText DialogText = FText::Format(
+		LOCTEXT("Realtime Roads test button text", "This is a {0}"),
+		FText::FromString(TEXT("test"))
+	);
 	FMessageDialog::Open(EAppMsgType::Ok, DialogText);
 }
 
 void FRealtimeRoadsSystemsModule::RegisterMenus()
 {
-	// Owner will be used for cleanup in call to UToolMenus::UnregisterOwner
 	FToolMenuOwnerScoped OwnerScoped(this);
 
+	// Extend the Window menu
 	{
-		UToolMenu* Menu = UToolMenus::Get()->ExtendMenu("LevelEditor.MainMenu.Window");
-		{
-			FToolMenuSection& Section = Menu->FindOrAddSection("WindowLayout");
-			Section.AddMenuEntryWithCommandList(FRealtimeRoadsSystemsCommands::Get().PluginAction, PluginCommands);
-		}
+		UToolMenu* Menu = UToolMenus::Get()->ExtendMenu("LevelEditor.MainMenu.RealtimeRoads");
+		FToolMenuSection& Section = Menu->FindOrAddSection("WindowLayout");
+
+		Section.AddMenuEntryWithCommandList(FRealtimeRoadsSystemsCommands::Get().PluginAction, PluginCommands);
+		Section.AddMenuEntryWithCommandList(FRealtimeRoadsSystemsCommands::Get().StartHAPIServerAction, PluginCommands);
 	}
 
+	// Extend the Toolbar menu
 	{
 		UToolMenu* ToolbarMenu = UToolMenus::Get()->ExtendMenu("LevelEditor.LevelEditorToolBar.PlayToolBar");
-		{
-			FToolMenuSection& Section = ToolbarMenu->FindOrAddSection("PluginTools");
-			{
-				FToolMenuEntry& Entry = Section.AddEntry(FToolMenuEntry::InitToolBarButton(FRealtimeRoadsSystemsCommands::Get().PluginAction));
-				Entry.SetCommandList(PluginCommands);
-			}
-		}
+		FToolMenuSection& Section = ToolbarMenu->FindOrAddSection("PluginTools");
+
+		// Add toolbar buttons with command list correctly assigned
+		FToolMenuEntry& Entry1 = Section.AddEntry(FToolMenuEntry::InitToolBarButton(FRealtimeRoadsSystemsCommands::Get().PluginAction));
+		Entry1.SetCommandList(PluginCommands);
+
+		FToolMenuEntry& Entry2 = Section.AddEntry(FToolMenuEntry::InitToolBarButton(FRealtimeRoadsSystemsCommands::Get().StartHAPIServerAction));
+		Entry2.SetCommandList(PluginCommands);
 	}
 }
 

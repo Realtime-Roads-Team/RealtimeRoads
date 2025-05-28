@@ -1,4 +1,5 @@
 // Copyright Epic Games, Inc. All Rights Reserved.
+// Copyright (c) 2025 Morgan Skillicorn. All rights reserved.
 
 #include "RealtimeRoadsSystemsStyle.h"
 #include "RealtimeRoadsSystems.h"
@@ -44,6 +45,7 @@ TSharedRef< FSlateStyleSet > FRealtimeRoadsSystemsStyle::Create()
 	Style->SetContentRoot(IPluginManager::Get().FindPlugin("RealtimeRoadsSystems")->GetBaseDir() / TEXT("Resources"));
 
 	Style->Set("RealtimeRoadsSystems.PluginAction", new IMAGE_BRUSH_SVG(TEXT("CarIcon"), Icon20x20));
+	Style->Set("RealtimeRoadsSystems.StartHAPIServerAction", new IMAGE_BRUSH_SVG(TEXT("HoudiniRedIcon"), Icon20x20));
 	return Style;
 }
 

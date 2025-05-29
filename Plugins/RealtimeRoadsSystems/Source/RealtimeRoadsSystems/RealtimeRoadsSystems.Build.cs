@@ -40,8 +40,8 @@ public class RealtimeRoadsSystems : ModuleRules
 			{
 				"UnrealEd",
 				"EditorFramework",
-				"ToolMenus"
-			});
+				"ToolMenus",
+            });
 		}
 
 		// UI and framework

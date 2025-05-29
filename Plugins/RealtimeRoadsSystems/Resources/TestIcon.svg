@@ -1,17 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 20 20">
-  <!-- Generator: Adobe Illustrator 29.4.0, SVG Export Plug-In . SVG Version: 2.1.0 Build 152)  -->
+<svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 16 16">
+  <!-- Generator: Adobe Illustrator 29.5.1, SVG Export Plug-In . SVG Version: 2.1.0 Build 141)  -->
   <defs>
     <style>
       .st0 {
-        fill: none;
-        stroke: #ed1c24;
-        stroke-linecap: round;
-        stroke-linejoin: round;
-        stroke-opacity: .5;
-        stroke-width: 2px;
+        fill: #00aeef;
       }
     </style>
   </defs>
-  <path class="st0" d="M2,2l16,16M11.33,18L2,8.67M4.67,18l-2.67-2.67M18,11.33L8.67,2M18,4.67l-2.67-2.67"/>
+  <path class="st0" d="M8,15.75c-1.07,0-1.99-.38-2.74-1.13s-1.13-1.67-1.13-2.74v-6.97c-.43,0-.79-.15-1.09-.46s-.46-.67-.46-1.09v-1.55c0-.43.15-.79.46-1.09s.67-.46,1.09-.46h7.75c.43,0,.79.15,1.09.46s.46.67.46,1.09v1.55c0,.43-.15.79-.46,1.09s-.67.46-1.09.46v6.97c0,1.07-.38,1.99-1.13,2.74s-1.67,1.13-2.74,1.13M4.13,3.35h7.75v-1.55h-7.75v1.55ZM8,14.2c.65,0,1.19-.23,1.65-.68s.68-1,.68-1.65h-2.32v-1.55h2.32v-1.55h-2.32v-1.55h2.32v-2.32h-4.65v6.97c0,.65.23,1.19.68,1.65s1,.68,1.65.68M4.13,3.35v-1.55,1.55Z"/>
 </svg>

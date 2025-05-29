@@ -16,34 +16,37 @@ class REALTIMEROADSSYSTEMS_API UHapiContainer : public UObject
 public:
     UHapiContainer(const FObjectInitializer& ObjectInitializer);
 
-    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Debug Tools")
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "RealtimeRoadsHapi")
     int32 CubesToSpawn;
 
-    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Debug Tools")
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "RealtimeRoadsHapi")
     UHoudiniAsset* TestHDA;
 
 #if WITH_EDITOR
-    UFUNCTION(CallInEditor, Category = "Debug Tools")
-    void StartHapi();
+    UFUNCTION(CallInEditor, Category = "RealtimeRoadsHapi")
+    FString StartHapi();
 
-    UFUNCTION(CallInEditor, Category = "Debug Tools")
+    UFUNCTION(CallInEditor, Category = "RealtimeRoadsHapi")
     void TestInput();
 
-    UFUNCTION(BlueprintCallable, Category = "HAPI")
+    UFUNCTION(BlueprintCallable, Category = "RealtimeRoadsHapi")
     bool IsHapiServerRunning() const;
 #endif
 
 protected:
-    UFUNCTION(BlueprintNativeEvent, BlueprintCallable)
+    UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = "RealtimeRoadsHapi")
     void SetInitialParameterValues(UHoudiniPublicAPIAssetWrapper* InWrapper);
 
-    UFUNCTION(BlueprintNativeEvent, BlueprintCallable)
+    UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = "RealtimeRoadsHapi")
     void SetInputs(UHoudiniPublicAPIAssetWrapper* InWrapper);
 
-    UFUNCTION(BlueprintNativeEvent, BlueprintCallable)
+    UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = "RealtimeRoadsHapi")
     void PrintOutputs(UHoudiniPublicAPIAssetWrapper* InWrapper);
 
-    UPROPERTY(BlueprintReadWrite)
+    UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = "RealtimeRoadsHapi")
+    void BakeOutputs(UHoudiniPublicAPIAssetWrapper* InWrapper);
+
+    UPROPERTY(BlueprintReadWrite, Category = "RealtimeRoadsHapi")
     UHoudiniPublicAPIAssetWrapper* AssetWrapper;
 
 private:

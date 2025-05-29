@@ -80,3 +80,4 @@ DerivedDataCache/*
 /Plugins/RealtimeRoadsSystems/Content/HoudiniContent/hda/backup
 /Plugins/RealtimeRoadsSystems/Content/HoudiniContent/backup
 /Content/HoudiniEngine/Temp
+/Content/HoudiniEngine/Bake

@@ -18,9 +18,15 @@ public:
 
 	/** This function will be bound to Command. */
 	void PluginButtonClicked();
+	void TestButtonClicked();
 
 	/** Houdini Engine functions. */
 	void StartHapiButtonClicked();
+
+	/** Realtime Roads functions. */
+	void PlayButtonClicked();
+	void PauseButtonClicked();
+	void StopButtonClicked();
 	
 private:
 

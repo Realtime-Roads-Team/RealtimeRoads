@@ -12,17 +12,31 @@ UHapiContainer::UHapiContainer(const FObjectInitializer& ObjectInitializer)
 }
 
 #if WITH_EDITOR
-void UHapiContainer::StartHapi()
+FString UHapiContainer::StartHapi()
 {
-    if (!API->IsSessionValid())
+    FString output = "";
+
+    if (API != nullptr)
     {
-        UE_LOG(LogTemp, Warning, TEXT("Attempting to create HAPI session."));
-        API->CreateSession();
+        if (!API->IsSessionValid())
+        {
+            UE_LOG(LogTemp, Warning, TEXT("Creating HAPI session."));
+            output = "Creating HAPI session.";
+            API->CreateSession();
+        }
+        else
+        {
+            UE_LOG(LogTemp, Warning, TEXT("HAPI session already exists!"));
+            output = "HAPI session already exists!";
+        }
     }
     else
     {
-        UE_LOG(LogTemp, Warning, TEXT("HAPI session already exists!"));
+        UE_LOG(LogTemp, Warning, TEXT("HAPI could not be found."));
+        output = "HAPI could not be found.";
     }
+
+    return output;
 }
 
 bool UHapiContainer::IsHapiServerRunning() const
@@ -43,6 +57,8 @@ void UHapiContainer::TestInput()
         AssetWrapper->GetOnPostInstantiationDelegate().AddUniqueDynamic(this, &UHapiContainer::SetInputs);
         // Print the outputs after the node has cook and the plug-in has processed the output
         AssetWrapper->GetOnPostProcessingDelegate().AddUniqueDynamic(this, &UHapiContainer::PrintOutputs);
+        // Bake the Houdini cook and remove proxy geo
+        AssetWrapper->GetOnPostProcessingDelegate().AddUniqueDynamic(this, &UHapiContainer::BakeOutputs);
     }
 }
 
@@ -71,9 +87,11 @@ void UHapiContainer::PrintOutputs_Implementation(UHoudiniPublicAPIAssetWrapper* 
         {
             TArray<FHoudiniPublicAPIOutputObjectIdentifier> Identifiers;
             InWrapper->GetOutputIdentifiersAt(OutputIndex, Identifiers);
+
             UE_LOG(LogTemp, Log, TEXT("\toutput index: %d"), OutputIndex);
             UE_LOG(LogTemp, Log, TEXT("\toutput type: %d"), InWrapper->GetOutputTypeAt(OutputIndex));
             UE_LOG(LogTemp, Log, TEXT("\tnum_output_objects: %d"), Identifiers.Num());
+
             if (Identifiers.Num() > 0)
             {
                 for (const FHoudiniPublicAPIOutputObjectIdentifier& Identifier : Identifiers)
@@ -81,14 +99,45 @@ void UHapiContainer::PrintOutputs_Implementation(UHoudiniPublicAPIAssetWrapper* 
                     UObject* const OutputObject = InWrapper->GetOutputObjectAt(OutputIndex, Identifier);
                     UObject* const OutputComponent = InWrapper->GetOutputComponentAt(OutputIndex, Identifier);
                     const bool bIsProxy = InWrapper->IsOutputCurrentProxyAt(OutputIndex, Identifier);
+
                     UE_LOG(LogTemp, Log, TEXT("\t\tidentifier: %s_%s"), *(Identifier.PartName), *(Identifier.SplitIdentifier));
                     UE_LOG(LogTemp, Log, TEXT("\t\toutput_object: %s"), IsValid(OutputObject) ? *(OutputObject->GetFName().ToString()) : TEXT("None"))
-                        UE_LOG(LogTemp, Log, TEXT("\t\toutput_component: %s"), IsValid(OutputComponent) ? *(OutputComponent->GetFName().ToString()) : TEXT("None"))
-                        UE_LOG(LogTemp, Log, TEXT("\t\tis_proxy: %d"), bIsProxy)
-                        UE_LOG(LogTemp, Log, TEXT(""))
+                    UE_LOG(LogTemp, Log, TEXT("\t\toutput_component: %s"), IsValid(OutputComponent) ? *(OutputComponent->GetFName().ToString()) : TEXT("None"))
+                    UE_LOG(LogTemp, Log, TEXT("\t\tis_proxy: %d"), bIsProxy)
+                    UE_LOG(LogTemp, Log, TEXT(""))
                 }
             }
         }
     }
 }
+
+void UHapiContainer::BakeOutputs_Implementation(UHoudiniPublicAPIAssetWrapper* InWrapper)
+{
+    if (!InWrapper)
+    {
+        UE_LOG(LogTemp, Warning, TEXT("BakeOutputs called with null AssetWrapper"));
+        return;
+    }
+
+    // Dispatch BakeAllOutputs on Game Thread
+    AsyncTask(ENamedThreads::GameThread, [InWrapper]()
+    {
+        InWrapper->SetBakeMethod(EHoudiniEngineBakeOption::ToActor);
+        InWrapper->SetRemoveOutputAfterBake(true);
+        InWrapper->SetRecenterBakedActors(false);
+        InWrapper->SetReplacePreviousBake(true);
+
+        bool bSuccess = InWrapper->BakeAllOutputs();
+
+        if (bSuccess)
+        {
+            UE_LOG(LogTemp, Log, TEXT("BakeAllOutputs succeeded."));
+        }
+        else
+        {
+            UE_LOG(LogTemp, Warning, TEXT("BakeAllOutputs failed."));
+        }
+    });
+}
+
 #endif

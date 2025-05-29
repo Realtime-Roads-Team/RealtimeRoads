@@ -20,5 +20,11 @@ public:
 
 public:
 	TSharedPtr< FUICommandInfo > PluginAction;
+	TSharedPtr< FUICommandInfo > TestAction;
 	TSharedPtr< FUICommandInfo > StartHAPIServerAction;
+	TSharedPtr< FUICommandInfo > PlayAction;
+	TSharedPtr< FUICommandInfo > PauseAction;
+	TSharedPtr< FUICommandInfo > StopAction;
+
+
 };

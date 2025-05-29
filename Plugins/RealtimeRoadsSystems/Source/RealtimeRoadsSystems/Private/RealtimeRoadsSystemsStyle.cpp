@@ -45,7 +45,11 @@ TSharedRef< FSlateStyleSet > FRealtimeRoadsSystemsStyle::Create()
 	Style->SetContentRoot(IPluginManager::Get().FindPlugin("RealtimeRoadsSystems")->GetBaseDir() / TEXT("Resources"));
 
 	Style->Set("RealtimeRoadsSystems.PluginAction", new IMAGE_BRUSH_SVG(TEXT("CarIcon"), Icon20x20));
-	Style->Set("RealtimeRoadsSystems.StartHAPIServerAction", new IMAGE_BRUSH_SVG(TEXT("HoudiniRedIcon"), Icon20x20));
+	Style->Set("RealtimeRoadsSystems.StartHAPIServerAction", new IMAGE_BRUSH_SVG(TEXT("HoudiniIcon"), Icon20x20));
+	Style->Set("RealtimeRoadsSystems.PlayAction", new IMAGE_BRUSH_SVG(TEXT("PlayIcon"), Icon20x20));
+	Style->Set("RealtimeRoadsSystems.PauseAction", new IMAGE_BRUSH_SVG(TEXT("PauseIcon"), Icon20x20));
+	Style->Set("RealtimeRoadsSystems.StopAction", new IMAGE_BRUSH_SVG(TEXT("StopIcon"), Icon20x20));
+	Style->Set("RealtimeRoadsSystems.TestAction", new IMAGE_BRUSH_SVG(TEXT("TestIcon"), Icon20x20));
 	return Style;
 }
 

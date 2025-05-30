@@ -44,7 +44,10 @@ protected:
     void PrintOutputs(UHoudiniPublicAPIAssetWrapper* InWrapper);
 
     UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = "RealtimeRoadsHapi")
-    void BakeOutputs(UHoudiniPublicAPIAssetWrapper* InWrapper);
+    void BakeOutputsToScene(UHoudiniPublicAPIAssetWrapper* InWrapper);
+
+    UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = "RealtimeRoadsHapi")
+    void BakeOutputsToFile(UHoudiniPublicAPIAssetWrapper* InWrapper);
 
     UPROPERTY(BlueprintReadWrite, Category = "RealtimeRoadsHapi")
     UHoudiniPublicAPIAssetWrapper* AssetWrapper;

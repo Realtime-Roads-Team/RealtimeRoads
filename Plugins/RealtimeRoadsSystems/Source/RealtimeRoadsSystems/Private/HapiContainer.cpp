@@ -58,7 +58,14 @@ void UHapiContainer::TestInput()
         // Print the outputs after the node has cook and the plug-in has processed the output
         AssetWrapper->GetOnPostProcessingDelegate().AddUniqueDynamic(this, &UHapiContainer::PrintOutputs);
         // Bake the Houdini cook and remove proxy geo
-        AssetWrapper->GetOnPostProcessingDelegate().AddUniqueDynamic(this, &UHapiContainer::BakeOutputs);
+        AssetWrapper->GetOnPostProcessingDelegate().AddUniqueDynamic(this, &UHapiContainer::BakeOutputsToFile);
+
+        UObject* Outer = AssetWrapper->GetOuter();
+        if (AActor* WrapperActor = Cast<AActor>(Outer))
+        {
+            WrapperActor->Destroy();
+            UE_LOG(LogTemp, Log, TEXT("Wrapper actor destroyed after baking."));
+        }
     }
 }
 
@@ -111,7 +118,7 @@ void UHapiContainer::PrintOutputs_Implementation(UHoudiniPublicAPIAssetWrapper* 
     }
 }
 
-void UHapiContainer::BakeOutputs_Implementation(UHoudiniPublicAPIAssetWrapper* InWrapper)
+void UHapiContainer::BakeOutputsToScene_Implementation(UHoudiniPublicAPIAssetWrapper* InWrapper)
 {
     if (!InWrapper)
     {
@@ -121,23 +128,58 @@ void UHapiContainer::BakeOutputs_Implementation(UHoudiniPublicAPIAssetWrapper* I
 
     // Dispatch BakeAllOutputs on Game Thread
     AsyncTask(ENamedThreads::GameThread, [InWrapper]()
+        {
+            FDirectoryPath BakePath;
+            BakePath.Path = TEXT("/Game/RealtimeRoads/TestAssets");
+            InWrapper->SetBakeFolder(BakePath);
+            InWrapper->SetBakeMethod(EHoudiniEngineBakeOption::ToActor);
+            InWrapper->SetRemoveOutputAfterBake(true);
+            InWrapper->SetRecenterBakedActors(false);
+            InWrapper->SetReplacePreviousBake(true);
+
+            bool bSuccess = InWrapper->BakeAllOutputs();
+
+            if (bSuccess)
+            {
+                UE_LOG(LogTemp, Log, TEXT("BakeAllOutputsToScene succeeded."));
+            }
+            else
+            {
+                UE_LOG(LogTemp, Warning, TEXT("BakeAllOutputs failed."));
+            }
+        });
+}
+
+void UHapiContainer::BakeOutputsToFile_Implementation(UHoudiniPublicAPIAssetWrapper* InWrapper)
+{
+    if (!InWrapper)
     {
-        InWrapper->SetBakeMethod(EHoudiniEngineBakeOption::ToActor);
-        InWrapper->SetRemoveOutputAfterBake(true);
-        InWrapper->SetRecenterBakedActors(false);
-        InWrapper->SetReplacePreviousBake(true);
+        UE_LOG(LogTemp, Warning, TEXT("BakeOutputs called with null AssetWrapper"));
+        return;
+    }
 
-        bool bSuccess = InWrapper->BakeAllOutputs();
+    // Dispatch BakeAllOutputs on Game Thread
+    AsyncTask(ENamedThreads::GameThread, [InWrapper]()
+        {
+            FDirectoryPath BakePath;
+            BakePath.Path = TEXT("/Game/RealtimeRoads/TestAssets");
+            InWrapper->SetBakeFolder(BakePath);
+            InWrapper->SetBakeMethod(EHoudiniEngineBakeOption::ToActor);
+            InWrapper->SetRemoveOutputAfterBake(true);
+            InWrapper->SetRecenterBakedActors(false);
+            InWrapper->SetReplacePreviousBake(false);
 
-        if (bSuccess)
-        {
-            UE_LOG(LogTemp, Log, TEXT("BakeAllOutputs succeeded."));
-        }
-        else
-        {
-            UE_LOG(LogTemp, Warning, TEXT("BakeAllOutputs failed."));
-        }
-    });
+            bool bSuccess = InWrapper->BakeAllOutputs();
+
+            if (bSuccess)
+            {
+                UE_LOG(LogTemp, Log, TEXT("BakeAllOutputsToFile succeeded."));
+            }
+            else
+            {
+                UE_LOG(LogTemp, Warning, TEXT("BakeAllOutputs failed."));
+            }
+        });
 }
 
 #endif

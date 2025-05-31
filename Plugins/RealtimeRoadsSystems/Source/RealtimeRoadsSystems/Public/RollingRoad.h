@@ -4,6 +4,8 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
+#include "DrawDebugHelpers.h"
+#include "RollingRoadSection.h"
 #include "RollingRoad.generated.h"
 
 UCLASS()
@@ -12,17 +14,65 @@ class REALTIMEROADSSYSTEMS_API ARollingRoad : public AActor
 	GENERATED_BODY()
 	
 public:	
-	// Sets default values for this actor's properties
 	ARollingRoad();
 
 protected:
-	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 
-public:	
-	// Called every frame
+public:
 	virtual void Tick(float DeltaTime) override;
 
-	
-	
+	/** Allows ticking in editor viewport without Play mode */
+	virtual bool ShouldTickIfViewportsOnly() const override;
+
+	/** Spawns the initial row of chunks */
+	UFUNCTION(CallInEditor, Category = "RollingRoad")
+	void GenerateInitialChunks();
+
+	/** Clears all spawned chunks */
+	UFUNCTION(CallInEditor, Category = "RollingRoad")
+	void ClearExistingChunks();
+
+	/** Step forward one editor tick manually */
+	UFUNCTION(CallInEditor, Category = "RollingRoad")
+	void StepChunksEditor();
+
+	/** Update logic for editor/runtime chunk management */
+	UFUNCTION(CallInEditor, Category = "RollingRoad")
+	void UpdateChunksEditor(float DeltaTime);
+
+	UFUNCTION(CallInEditor, Category = "RollingRoad")
+	void DrawDebugGizmos();
+
+
+public:
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "RollingRoad")
+	FVector2D ChunkSize = FVector2D(1000.f, 1000.f);
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "RollingRoad")
+	int32 FrontCullingDistance = 10000;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "RollingRoad")
+	int32 RearCullingDistance = 10000;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "RollingRoad")
+	int32 NumChunks = 10;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "RollingRoad")
+	FVector MovementDirection = FVector(1, 0, 0);
+
+	/** Speed in km/h, exposed to editor */
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "RollingRoad")
+	float ChunkSpeedKmph = 60.0f;
+
+	/** Computed speed in cm/s (Unreal units) */
+	float GetChunkSpeedCms() const;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "RollingRoad")
+	TSubclassOf<ARollingRoadSection> ChunkClass;
+
+	/** Currently spawned chunk actors */
+	UPROPERTY(VisibleAnywhere, Category = "RollingRoad")
+	TArray<ARollingRoadSection*> SpawnedChunks;
 };

@@ -1,6 +1,6 @@
 {
 	"FileVersion": 3,
-	"EngineAssociation": "5.5",
+	"EngineAssociation": "{B4A2A6F2-454E-642D-A55C-6EBCCD5181B6}",
 	"Category": "",
 	"Description": "",
 	"Modules": [
@@ -35,6 +35,10 @@
 				"Mac",
 				"Linux"
 			]
+		},
+		{
+			"Name": "MetaHumanCharacter",
+			"Enabled": true
 		}
 	]
 }

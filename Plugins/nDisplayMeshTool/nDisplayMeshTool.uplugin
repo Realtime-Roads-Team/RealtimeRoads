@@ -11,7 +11,7 @@
 	"FabURL": "com.epicgames.launcher://ue/Fab/product/469abdb1-f8ae-4591-8f83-fe00b423d0a1",
 	"MarketplaceURL": "com.epicgames.launcher://ue/Fab/product/469abdb1-f8ae-4591-8f83-fe00b423d0a1",
 	"SupportURL": "hello@morgan.games",
-	"EngineVersion": "5.5.0",
+	"EngineVersion": "5.6.0",
 	"CanContainContent": true,
 	"IsBetaVersion": true,
 	"IsExperimentalVersion": true,

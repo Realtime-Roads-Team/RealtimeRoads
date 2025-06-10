@@ -1,0 +1,366 @@
+$maincolor: #c23659;
+$secondcolor: #18181B;
+$darkBackground: #18181B;
+$darkFullkBackground: #000000;
+$fontWhiteColor: #ffffff;
+$buttonBackgroundColor: #efefef;
+$sectionTitleBackgroundColor: #212126;
+$sectionTitleFontColor: #c2c2cc;
+$sectionTitleFontSize: 20px;
+
+
+$table-font-size: 13px;
+$table-side-padding: 6px;
+
+$iPad: 1000px;
+$iPadPro11: 1190px;
+$iPadPro12: 1366px;
+
+@font-face {
+    font-family: "Rubik";
+    src: url("{{url_for('static', filename='fonts/Rubik/static/Rubik-Medium.ttf') }}");
+}
+
+@font-face {
+    font-family: "Ubuntu";
+    src: url("../fonts/Ubuntu/Ubuntu-Medium.ttf");
+}
+
+@mixin iPad{
+    @media(min-width: $iPad){
+        @content;
+    }
+}
+@mixin iPadPro11{
+    @media(min-width: $iPadPro11){
+        @content;
+    }
+}
+@mixin iPadPro12{
+    @media(min-width: $iPadPro12){
+        @content;
+    }
+}
+
+
+html, body{
+    background-color: $darkBackground;
+    height: 100%;
+    font-family: 'Ubuntu';
+}
+
+.section-title-wrapper{
+    height: 45px;
+    color: $sectionTitleFontColor;
+    background-color: $sectionTitleBackgroundColor ;
+    display: flex;
+    .section-title{
+        font-size: $sectionTitleFontSize;
+        margin: auto 0 auto 65px;
+       
+    }
+}
+
+
+.main-content{
+    height: 100vh;
+    max-width: 100%;
+    padding: 0;
+    .row{
+        margin: 0;
+    }
+    .container{
+        max-width: 1266px;
+    }
+    .container-navbar{
+        width: 90%;
+        margin: auto;
+    }
+}
+
+
+
+.row-navbar{
+    height: 10%;
+    
+    .navbar {
+        background-color: $darkFullkBackground;
+        .logo-container{
+            
+            #logoMoSys{
+                height: 80%;
+            }
+            #logoText{
+                font-weight: 600;
+                font-size: 32px;
+                padding: 0 0 5px 4px;
+                color: $fontWhiteColor;
+            }
+        }
+        .iconTheme-wrapper{
+            background-color: $maincolor;
+            border-radius: 4px;
+            display: flex;
+            visibility: hidden;
+            #iconTheme{
+                height: 40px;
+                padding: 8px 12px;
+                margin: auto;
+                visibility: hidden;
+            }
+        }
+        .statusStage-wrapper{
+            text-transform: uppercase;
+            color: $maincolor;
+            display: flex;
+            width: 200px;
+            #unrealStatus{
+                margin: auto;
+                font-weight: 600;
+                font-size: 18px;
+            }
+        }
+        .timecode-wrapper{
+            text-transform: uppercase;
+            color: $maincolor;
+            display: flex;
+            #timecode{
+                visibility: hidden;
+                margin: auto;
+                font-weight: 400;
+                font-size: 26px;
+            }
+        }
+        .screenLock-wrapper{
+            display: flex;
+            #screenLock{
+                margin: auto;
+                visibility: hidden;
+            }
+        }
+        #unrealStatus{
+            color: $maincolor;
+            font-weight: 600;
+        }
+        #powerButton{
+            height: 45px;
+            visibility: hidden;
+        }
+        
+        .nav-item {
+            margin: 0 2rem 0 1.5rem;
+        }
+    }
+}
+.row-engine{
+    // height: 24%;
+
+    #engineRoom{
+        background-color: $darkFullkBackground;
+        width: 100%;
+        display: flex;
+        padding: 12px 0 12px 0;
+        #rowFollowers{
+            visibility: hidden;
+        }
+    }
+    #control-room{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        #refreshBtn{
+            visibility: hidden;
+        }
+        .btn-ctrl{
+            width: 80%;
+            height: 80px;
+            background-color: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 12px;
+
+            &:hover {
+                cursor: pointer;
+              }
+            img{
+                height: 45px;
+                // padding: 5px 10px;
+            }
+            
+        }
+    }
+    .borderless td, .borderless th {
+        border: none;
+    }
+    table{
+        text-align: center;
+        font-size: $table-font-size;
+        width: 90%;
+        padding: 28px 0 28px 0;
+        margin: 0 0 0 auto;
+        color: $fontWhiteColor;
+
+        thead{
+            tr{
+                th{
+                    padding-left: $table-side-padding;
+                    padding-right: $table-side-padding;
+                    padding-top: 0.3rem;
+                    padding-bottom: 0.3rem;
+                }
+               
+                td{
+                    padding-left: $table-side-padding;
+                    padding-right: $table-side-padding;
+                    padding-top: 0.3rem;
+                    padding-bottom: 0.3rem;
+                }
+            }
+            #rowController{
+                th{
+                    text-align: left;
+                }
+            }
+        }
+        tbody{
+            tr{
+                td{
+                    padding-left: $table-side-padding;
+                    padding-right: $table-side-padding;
+                    padding-top: 0.3rem;
+                    padding-bottom: 0.3rem;
+                }
+                
+                th{
+                    text-align: left;
+                    padding-left: $table-side-padding;
+                    padding-right: $table-side-padding;
+                    padding-top: 0.3rem;
+                    padding-bottom: 0.3rem;
+                }
+            }
+            
+        }
+    }
+}
+.row-levels{
+    height: 50%;
+    @include iPadPro11{
+        height: 40%;
+    }
+    @include iPadPro12{
+        height: 50%;
+    }
+    .level-number{
+        font-size: 28px;
+    }
+    .level-thumbnail{
+        height: 40px;
+    }
+    #persistentLevel{
+        font-size: 20px;
+        margin-right: 20px;
+    }
+
+    .level-location{
+        font-size: 14px;
+        padding: 0;
+        margin: 0;
+        line-height: 10px;
+    }
+    .level-name{
+        font-weight: 500;
+        padding: 0;
+        margin: 0;
+    }
+    .list-levels{
+        height: 90%;
+        overflow: scroll;
+        .list-group-item{
+            padding: 1.4rem 1.9rem;
+            background-color: transparent;
+            border: 1px solid rgba(180, 180, 180, 0.125);
+            color: $fontWhiteColor;
+        }
+        .active{
+            background-color: $maincolor;
+        }
+    }
+    #screen-room{
+        background-color: $darkBackground;
+        color: $fontWhiteColor;
+        flex-flow: column wrap;
+        #screenTop{
+            
+            #liveIcon{
+                border: 2px solid #ff0000;
+                border-radius: 4px;
+                width: 70px;
+                font-size: 12px;
+                margin: 10px 120px 0 0;
+                visibility: hidden;
+                img{
+                    height: 10px;
+                }
+            }
+        }
+        img{
+            height: 80%;
+            margin: auto;
+            @include iPad{
+                height: 75%;
+            }
+            @include iPadPro12{
+                height: 80%;
+            }
+        }
+    }
+
+}
+.row-triggers{
+    height: 10%;
+    .container-trigger{
+       display: flex;
+       align-items: center;
+        
+
+        .trigger-list{
+            width: 90%;
+            // margin: auto;
+            justify-content: center;
+        }
+
+       .btn-trigger-base{
+        font-weight: 500;
+        font-size: 24px;
+        color: $secondcolor;
+        background-color: $buttonBackgroundColor;
+       }
+
+       .btn-trigger{
+           @extend .btn-trigger-base;
+           height: 54px;
+           width: 54px;
+           border-radius: 27px;
+           margin: auto 12px;
+       }
+       #btnShift{
+            @extend .btn-trigger-base;
+            width: 140px;
+            padding: 3px 0;
+       }
+    }
+}
+
+.status-icon{
+    img{
+        height: 12px;
+    }
+}
+
+.no-padding{
+    padding-left:0 !important;
+    padding-right:0 !important;
+}
+

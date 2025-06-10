@@ -1,0 +1,305 @@
+{
+  "FileVersion": 3,
+  "Version": 7,
+  "VersionName": "5.6.* #1c46fc35",
+  "FriendlyName": "Mo-Sys VP Pro",
+  "Description": "A professional Virtual Production plugin that provides a range of Unreal Editor tools for VP.",
+  "Category": "Virtual Production",
+  "CreatedBy": "Mo-Sys Engineering Ltd",
+  "CreatedByURL": "http://mo-sys.com",
+  "DocsURL": "",
+  "MarketplaceURL": "",
+  "SupportURL": "",
+  "EngineVersion": "5.6.0",
+  "CanContainContent": true,
+  "Installed": true,
+  "Modules": [
+    {
+      "Name": "MoSysAPI",
+      "Type": "Runtime",
+      "LoadingPhase": "EarliestPossible",
+      "PlatformAllowList": [
+        "Win64"
+      ]
+    },
+    {
+      "Name": "MoSysAuth",
+      "Type": "Runtime",
+      "LoadingPhase": "PreDefault",
+      "PlatformAllowList": [
+        "Win64"
+      ]
+    },
+    {
+      "Name": "MoSysAuthEditor",
+      "Type": "Editor",
+      "LoadingPhase": "Default",
+      "PlatformAllowList": [
+        "Win64"
+      ]
+    },
+    {
+      "Name": "MoSysTracking",
+      "Type": "Runtime",
+      "LoadingPhase": "PreDefault",
+      "PlatformAllowList": [
+        "Win64"
+      ]
+    },
+    {
+      "Name": "MoSysLensDistortion",
+      "Type": "Runtime",
+      "LoadingPhase": "PostConfigInit",
+      "PlatformAllowList": [
+        "Win64"
+      ]
+    },
+    {
+      "Name": "MoSysVirtualProduction",
+      "Type": "UncookedOnly",
+      "LoadingPhase": "Default",
+      "PlatformAllowList": [
+        "Win64"
+      ]
+    },
+    {
+      "Name": "MoSysLive",
+      "Type": "UncookedOnly",
+      "LoadingPhase": "Default",
+      "PlatformAllowList": [
+        "Win64"
+      ]
+    },
+    {
+      "Name": "MoSysOnSetVFX",
+      "Type": "UncookedOnly",
+      "LoadingPhase": "None",
+      "PlatformAllowList": [
+        "Win64"
+      ]
+    },
+    {
+      "Name": "MoSysStarTrackerStudio",
+      "Type": "UncookedOnly",
+      "LoadingPhase": "None",
+      "PlatformAllowList": [
+        "Win64"
+      ]
+    },
+    {
+      "Name": "CCSNearTime",
+      "Type": "UncookedOnly",
+      "LoadingPhase": "None",
+      "PlatformAllowList": [
+        "Win64"
+      ]
+    },
+    {
+      "Name": "CCSNearTimeEditor",
+      "Type": "Editor",
+      "LoadingPhase": "None"
+    },
+    {
+      "Name": "MoSysXR",
+      "Type": "UncookedOnly",
+      "LoadingPhase": "None",
+      "PlatformAllowList": [
+        "Win64"
+      ]
+    },
+    {
+      "Name": "MoSysTrackingEditor",
+      "Type": "Editor",
+      "LoadingPhase": "PostEngineInit",
+      "PlatformAllowList": [
+        "Win64"
+      ]
+    },
+    {
+      "Name": "MoSysMediaEditor",
+      "Type": "Editor",
+      "LoadingPhase": "PostEngineInit",
+      "PlatformAllowList": [
+        "Win64"
+      ]
+    },
+    {
+      "Name": "MoSysOnSetVFXEditor",
+      "Type": "Editor",
+      "LoadingPhase": "None",
+      "PlatformAllowList": [
+        "Win64"
+      ]
+    },
+    {
+      "Name": "MoSysVirtualProductionEditor",
+      "Type": "Editor",
+      "LoadingPhase": "PostEngineInit",
+      "PlatformAllowList": [
+        "Win64"
+      ]
+    },
+    {
+      "Name": "MoSysStarTrackerStudioEditor",
+      "Type": "Editor",
+      "LoadingPhase": "None",
+      "PlatformAllowList": [
+        "Win64"
+      ]
+    },
+    {
+      "Name": "MoSysXREditor",
+      "Type": "Editor",
+      "LoadingPhase": "None",
+      "PlatformAllowList": [
+        "Win64"
+      ]
+    },
+    {
+      "Name": "MoSysProjectConfig",
+      "Type": "Editor",
+      "LoadingPhase": "PostEngineInit",
+      "PlatformAllowList": [
+        "Win64"
+      ]
+    },
+    {
+      "Name": "CCSNearTimeMonitor",
+      "Type": "Runtime",
+      "LoadingPhase": "PreDefault"
+    },
+    {
+      "Name": "CCSNearTimeRender",
+      "Type": "UncookedOnly",
+      "LoadingPhase": "Default"
+    },
+    {
+      "Name": "KantanChartsDatasource",
+      "Type": "Runtime",
+      "LoadingPhase": "Default"
+    },
+    {
+      "Name": "KantanChartsSlate",
+      "Type": "Runtime",
+      "LoadingPhase": "Default"
+    },
+    {
+      "Name": "KantanChartsUMG",
+      "Type": "Runtime",
+      "LoadingPhase": "Default"
+    },
+    {
+      "Name": "KantanChartsEditor",
+      "Type": "EditorNoCommandlet",
+      "LoadingPhase": "Default"
+    }
+  ],
+  "Plugins": [
+    {
+      "Name": "AjaMedia",
+      "Enabled": true
+    },
+    {
+      "Name": "AppleProResMedia",
+      "Enabled": true,
+      "SupportedTargetPlatforms": [
+        "Win64"
+      ]
+    },
+    {
+      "Name": "AudioCaptureTimecodeProvider",
+      "Enabled": true
+    },
+    {
+      "Name": "AvidDNxMedia",
+      "Enabled": true
+    },
+    {
+      "Name": "BlackmagicMedia",
+      "Enabled": true
+    },
+    {
+      "Name": "CameraCalibration",
+      "Enabled": true
+    },
+    {
+      "Name": "CameraCalibrationCore",
+      "Enabled": true
+    },
+    {
+      "Name": "Compositor",
+      "Enabled": true
+    },
+    {
+      "Name": "EditorScriptingUtilities",
+      "Enabled": true
+    },
+    {
+      "Name": "ImgMedia",
+      "Enabled": true
+    },
+    {
+      "Name": "LiveLinkCamera",
+      "Enabled": true
+    },
+    {
+      "Name": "MediaFrameworkUtilities",
+      "Enabled": true
+    },
+    {
+      "Name": "MediaIOFramework",
+      "Enabled": true
+    },
+    {
+      "Name": "nDisplay",
+      "Enabled": true,
+      "SupportedTargetPlatforms": [
+        "Win64"
+      ]
+    },
+    {
+      "Name": "PythonScriptPlugin",
+      "Enabled": true
+    },
+    {
+      "Name": "RemoteControl",
+      "Enabled": true
+    },
+    {
+      "Name": "SequencerScripting",
+      "Enabled": true
+    },
+    {
+      "Name": "TimedDataMonitor",
+      "Enabled": true
+    },
+    {
+      "Name": "VirtualProductionUtilities",
+      "Enabled": true
+    },
+    {
+      "Name": "Switchboard",
+      "Enabled": true
+    },
+    {
+      "Name": "LiveLinkOverNDisplay",
+      "Enabled": true
+    },
+    {
+      "Name": "BlueprintFileUtils",
+      "Enabled": true
+    },
+    {
+      "Name": "JsonBlueprintUtilities",
+      "Enabled": true
+    },
+    {
+      "Name": "ElectraPlayer",
+      "Enabled": true
+    },
+    {
+      "Name": "ImgMedia",
+      "Enabled": true
+    }
+  ]
+}

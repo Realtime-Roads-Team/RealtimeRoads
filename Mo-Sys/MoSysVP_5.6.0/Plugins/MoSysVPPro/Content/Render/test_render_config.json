@@ -1,0 +1,358 @@
+{
+  "Job": {
+    "MapPath": "/MoSysVPPro/Render/Maps/L_RenderDefaultMap.L_RenderDefaultMap",
+    "SequencePath": "/MoSysVPPro/Render/Scene_1_01_13-01-34-01.Scene_1_01_13-01-34-01"
+  },
+  "Sequence": {
+    "Camera": "MoSysCamera"
+  },
+  "World": {
+    "RemoveNames": [ "Chair_15" ],
+    "RemoveTags": [],
+    "HiddenNames": [ "Table" ],
+    "HiddenTags": [],
+	"LoadLevelNames" : [ "temp" ],
+	"UnloadLevelNames": []
+  },
+  "MoviePipeline": {
+    "Settings": {
+      "AntiAliasing": {
+        "Enabled": true,
+        "SpatialSampleCount": 1,
+        "TemporalSampleCount": 8,
+        "bOverrideAntiAliasing": true,
+        "AntiAliasingMethod": "AAM_None",
+        "RenderWarmUpCount": 120,
+        "bUseCameraCutForWarmUp": false,
+        "EngineWarmUpCount": 120,
+        "bRenderWarmUpFrames": false
+      },
+      "Camera": {
+        "Enabled": false,
+        "ShutterTiming": "FrameCenter",
+        "OverscanPercentage": 0
+      },
+      "Color": {
+        "Enabled": false,
+        "OCIOConfiguration": {
+          "bIsEnabled": false,
+          "ColorConfiguration": {
+            "ConfigurationSource": {
+              "ConfigurationFile": "",
+              "DesiredColorSpaces": [
+                {
+                  "ColorSpaceName": "",
+                  "ColorSpaceIndex": 0,
+                  "FamilyName": ""
+                }
+              ],
+              "ColorTransforms": [
+                {
+                  "SourceColorSpace": "",
+                  "DestinationColorSpace": "",
+                  "Lut3dTexture": {}
+                }
+              ]
+            },
+            "SourceColorSpace": {
+              "ColorSpaceName": "",
+              "ColorSpaceIndex": 0,
+              "FamilyName": ""
+            },
+            "DestinationColorSpace": {
+              "ColorSpaceName": "",
+              "ColorSpaceIndex": 0,
+              "FamilyName": ""
+            }
+          }
+        },
+        "bDisableToneCurve": false
+      },
+      "CommandLineEncoder": {
+        "Enabled": false,
+        "FileNameFormatOverride": "",
+        "Quality": "Epic",
+        "AdditionalCommandLineArgs": "",
+        "bDeleteSourceFiles": false,
+        "bSkipEncodeOnRenderCanceled": true
+      },
+      "ConsoleVariable": {
+        "Enabled": false,
+        "ConsoleVariables": {
+		    "r.MotionBlurQuality": 4,
+			"r.MotionBlurSeparable": 1,
+			"r.DepthOfFieldQuality": 4,
+			"r.BloomQuality": 5,
+			"r.Tonemapper.Quality": 5,
+			"r.RayTracing.GlobalIllumination": 1,
+			"r.RayTracing.GlobalIllumination.MaxBounces": 2,
+			"r.RayTracing.Reflections.MaxRoughness": 1,
+			"r.RayTracing.Reflections.MaxBounces": 2,
+			"r.RayTracing.Reflections.Shadows": 2 
+        },
+        "StartConsoleCommands": [
+          "StartTest"
+        ],
+        "EndConsoleCommands": [
+          "EndTest"
+        ]
+      },
+      "Debug": {
+        "Enabled": false,
+        "bWriteAllSamples": false,
+        "bCaptureFramesWithRenderDoc": false,
+        "CaptureFrame": 0
+      },
+      "GameOverride": {
+        "Enabled": true,
+        "GameModeOverride": "/Script/MovieRenderPipelineCore.MoviePipelineGameMode",
+        "bCinematicQualitySettings": true,
+        "TextureStreaming": "Disabled",
+        "bUseLODZero": true,
+        "bDisableHLODs": true,
+        "bUseHighQualityShadows": true,
+        "ShadowDistanceScale": 10,
+        "ShadowRadiusThreshold": 0.001,
+        "bOverrideViewDistanceScale": true,
+        "ViewDistanceScale": 50,
+        "bFlushGrassStreaming": true
+      },
+      "HighRes": {
+        "Enabled": false,
+        "TileCount": 1,
+        "TextureSharpnessBias": 0,
+        "OverlapRatio": 0,
+        "bOverrideSubSurfaceScattering": false,
+        "BurleySampleCount": 64
+      },
+      "MoSys": {
+        "bEnableDistortion": true,
+        "bOverrideOverscan": true,
+        "OverrideOverscanFactor": 1.0,
+        "bAddDistortSTMapLayer": false,
+        "bAddUndistortSTMapLayer": false,
+        "bAddCalibrationCones": false,
+        "CalibrationConeAmount": 5,
+        "bAddCalibrationLayer": false,
+        "bRenderConesInMainPass": true,
+        "bAutoExportFBX": false,
+        "bExportCalibrationCones": false,
+        "FBXOutputDirectory": {
+          "Path": "{project_dir}/Saved/MovieRenders/FBX"
+        },
+        "bCameraCutOnly": true,
+        "CameraNames": [],
+        "bFitResolutionAspectRatio": true,
+        "Handles": 10,
+        "FrameOffset": -4,
+        "bNormalise": false,
+        "NormaliseFrame": 991,
+        "bAutoSetResolution": true,
+        "OutputResolutionAnamorphic": {
+          "X": 4320,
+          "Y": 1716
+        },
+        "OutputResolutionSpherical": {
+          "X": 4096,
+          "Y": 2160
+        }
+      },
+      "Output": {
+        "OutputDirectory": {
+          "Path": "{project_dir}/Saved/MovieRenders/"
+        },
+        "FileNameFormat": "{sequence_name}.{frame_number}",
+        "OutputResolution": {
+          "X": 1920,
+          "Y": 1080
+        },
+        "bUseCustomFrameRate": false,
+        "OutputFrameRate": {
+          "Numerator": 25000,
+          "Denominator": 1000
+        },
+        "DEBUG_FrameStepOffset": 0,
+        "bOverrideExistingOutput": true,
+        "OutputFrameStep": 1,
+        "bUseCustomPlaybackRange": false,
+        "CustomStartFrame": 0,
+        "CustomEndFrame": 0,
+        "ZeroPadFrameNumbers": 4,
+        "FrameNumberOffset": 0
+      },	  
+      "ViewFamily": {
+        "Enabled": true,
+		"TimeOffsetSeconds": 100
+      }
+    },
+    "Rendering": {
+      "BurnIn": {
+        "Enabled": true,
+        "BurnInClass": "/MovieRenderPipeline/Blueprints/DefaultBurnIn.DefaultBurnIn_C",
+        "bCompositeOntoFinalImage": true
+      },
+      "WidgetRenderer": {
+        "Enabled": false
+      },
+      "ObjectID": {
+        "Enabled": true,
+        "IdType": "Full"
+      },
+      "Panoramic": {
+        "Enabled": false
+      },
+      "DeferredPassBase": {
+        "Enabled": true,
+        "bAccumulatorIncludesAlpha": false,
+        "bDisableMultisampleEffects": false,
+        "bUse32BitPostProcessMaterials": false,
+        "AdditionalPostProcessMaterials": [
+          {
+            "bEnabled": false,
+            "Material": "/MovieRenderPipeline/Materials/MovieRenderQueue_WorldDepth.MovieRenderQueue_WorldDepth"
+          },
+          {
+            "bEnabled": false,
+            "Material": "/MovieRenderPipeline/Materials/MovieRenderQueue_MotionVectors.MovieRenderQueue_MotionVectors"
+          }
+        ],
+        "bAddDefaultLayer": false,
+        "StencilLayers": []
+      },
+      "DeferredPass_PathTracer": {
+        "Enabled": false,
+        "bAccumulatorIncludesAlpha": false,
+        "bDisableMultisampleEffects": false,
+        "bUse32BitPostProcessMaterials": false,
+        "AdditionalPostProcessMaterials": [
+          {
+            "bEnabled": false,
+            "Material": "/MovieRenderPipeline/Materials/MovieRenderQueue_WorldDepth.MovieRenderQueue_WorldDepth"
+          },
+          {
+            "bEnabled": false,
+            "Material": "/MovieRenderPipeline/Materials/MovieRenderQueue_MotionVectors.MovieRenderQueue_MotionVectors"
+          }
+        ],
+        "bAddDefaultLayer": false,
+        "StencilLayers": [
+          {
+            "Name": "Test"
+          }
+        ]
+      },
+      "DeferredPass_DetailLighting": {
+        "Enabled": false,
+        "bAccumulatorIncludesAlpha": false,
+        "bDisableMultisampleEffects": false,
+        "bUse32BitPostProcessMaterials": false,
+        "AdditionalPostProcessMaterials": [
+          {
+            "bEnabled": false,
+            "Material": "/MovieRenderPipeline/Materials/MovieRenderQueue_WorldDepth.MovieRenderQueue_WorldDepth"
+          },
+          {
+            "bEnabled": false,
+            "Material": "/MovieRenderPipeline/Materials/MovieRenderQueue_MotionVectors.MovieRenderQueue_MotionVectors"
+          }
+        ],
+        "bAddDefaultLayer": false,
+        "StencilLayers": []
+      },
+      "DeferredPass_LightingOnly": {
+        "Enabled": false,
+        "bAccumulatorIncludesAlpha": false,
+        "bDisableMultisampleEffects": false,
+        "bUse32BitPostProcessMaterials": false,
+        "AdditionalPostProcessMaterials": [
+          {
+            "bEnabled": false,
+            "Material": "/MovieRenderPipeline/Materials/MovieRenderQueue_WorldDepth.MovieRenderQueue_WorldDepth"
+          },
+          {
+            "bEnabled": false,
+            "Material": "/MovieRenderPipeline/Materials/MovieRenderQueue_MotionVectors.MovieRenderQueue_MotionVectors"
+          }
+        ],
+        "bAddDefaultLayer": false,
+        "StencilLayers": []
+      },
+      "DeferredPass_ReflectionsOnly": {
+        "Enabled": false,
+        "bAccumulatorIncludesAlpha": false,
+        "bDisableMultisampleEffects": false,
+        "bUse32BitPostProcessMaterials": false,
+        "AdditionalPostProcessMaterials": [
+          {
+            "bEnabled": false,
+            "Material": "/MovieRenderPipeline/Materials/MovieRenderQueue_WorldDepth.MovieRenderQueue_WorldDepth"
+          },
+          {
+            "bEnabled": false,
+            "Material": "/MovieRenderPipeline/Materials/MovieRenderQueue_MotionVectors.MovieRenderQueue_MotionVectors"
+          }
+        ],
+        "bAddDefaultLayer": false,
+        "StencilLayers": []
+      },
+      "DeferredPass_Unlit": {
+        "Enabled": false,
+        "bAccumulatorIncludesAlpha": false,
+        "bDisableMultisampleEffects": false,
+        "bUse32BitPostProcessMaterials": false,
+        "AdditionalPostProcessMaterials": [
+          {
+            "bEnabled": false,
+            "Material": "/MovieRenderPipeline/Materials/MovieRenderQueue_WorldDepth.MovieRenderQueue_WorldDepth"
+          },
+          {
+            "bEnabled": false,
+            "Material": "/MovieRenderPipeline/Materials/MovieRenderQueue_MotionVectors.MovieRenderQueue_MotionVectors"
+          }
+        ],
+        "bAddDefaultLayer": false,
+        "StencilLayers": []
+      }
+    },
+    "Exports": {
+      "BMP": {
+        "Enabled": false
+      },
+      "EXR": {
+        "Enabled": true,
+        "Compression": "PIZ",
+        "Multilayer": true
+      },
+      "JPG": {
+        "Enabled": false
+      },
+      "PNG": {
+        "Enabled": false
+      },
+      "ProRes": {
+        "Enabled": false,
+        "Codec": "ProRes_422",
+        "bDropFrameTimecode": true,
+        "bOverrideMaximumEncodingThreads": false,
+        "MaxNumberOfEncodingThreads": 0
+      },
+      "DNx": {
+        "Enabled": false,
+        "bUseCompression": true,
+        "NumberOfEncodingThreads": 4
+      },
+      "FCPXMLExporter": {
+        "Enabled": false,
+        "FileNameFormatOverride": "",
+        "DataSource": "OutputMetadata"
+      },
+      "WaveOutput": {
+        "Enabled": false,
+        "FileNameFormatOverride": ""
+      }
+    },
+    "Extra": {
+      "DisplayName": "CCSNearTimeConfiguration"
+    }
+  }
+}

@@ -1,0 +1,31 @@
+{
+	"BuildId": "43139311",
+	"Modules": 
+	{
+		"CCSNearTime": "UnrealEditor-CCSNearTime.dll",
+		"CCSNearTimeEditor": "UnrealEditor-CCSNearTimeEditor.dll",
+		"CCSNearTimeMonitor": "UnrealEditor-CCSNearTimeMonitor.dll",
+		"CCSNearTimeRender": "UnrealEditor-CCSNearTimeRender.dll",
+		"KantanChartsDatasource": "UnrealEditor-KantanChartsDatasource.dll",
+		"KantanChartsEditor": "UnrealEditor-KantanChartsEditor.dll",
+		"KantanChartsSlate": "UnrealEditor-KantanChartsSlate.dll",
+		"KantanChartsUMG": "UnrealEditor-KantanChartsUMG.dll",
+		"MoSysAPI": "UnrealEditor-MoSysAPI.dll",
+		"MoSysAuth": "UnrealEditor-MoSysAuth.dll",
+		"MoSysAuthEditor": "UnrealEditor-MoSysAuthEditor.dll",
+		"MoSysLensDistortion": "UnrealEditor-MoSysLensDistortion.dll",
+		"MoSysLive": "UnrealEditor-MoSysLive.dll",
+		"MoSysMediaEditor": "UnrealEditor-MoSysMediaEditor.dll",
+		"MoSysOnSetVFX": "UnrealEditor-MoSysOnSetVFX.dll",
+		"MoSysOnSetVFXEditor": "UnrealEditor-MoSysOnSetVFXEditor.dll",
+		"MoSysProjectConfig": "UnrealEditor-MoSysProjectConfig.dll",
+		"MoSysStarTrackerStudio": "UnrealEditor-MoSysStarTrackerStudio.dll",
+		"MoSysStarTrackerStudioEditor": "UnrealEditor-MoSysStarTrackerStudioEditor.dll",
+		"MoSysTracking": "UnrealEditor-MoSysTracking.dll",
+		"MoSysTrackingEditor": "UnrealEditor-MoSysTrackingEditor.dll",
+		"MoSysVirtualProduction": "UnrealEditor-MoSysVirtualProduction.dll",
+		"MoSysVirtualProductionEditor": "UnrealEditor-MoSysVirtualProductionEditor.dll",
+		"MoSysXR": "UnrealEditor-MoSysXR.dll",
+		"MoSysXREditor": "UnrealEditor-MoSysXREditor.dll"
+	}
+}

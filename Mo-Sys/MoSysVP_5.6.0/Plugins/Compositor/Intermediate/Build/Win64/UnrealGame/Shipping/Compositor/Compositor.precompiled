@@ -1,0 +1,18 @@
+{
+	"OutputFiles": [
+		"..\\..\\..\\x64\\UnrealGame\\Shipping\\Compositor\\Module.Compositor.cpp.obj",
+		"..\\..\\..\\x64\\UnrealGame\\Shipping\\Compositor\\CompositorModule.cpp.obj",
+		"..\\..\\..\\x64\\UnrealGame\\Shipping\\Compositor\\CompositeMesh.cpp.obj",
+		"..\\..\\..\\x64\\UnrealGame\\Shipping\\Compositor\\CompositePlanarReflection.cpp.obj",
+		"..\\..\\..\\x64\\UnrealGame\\Shipping\\Compositor\\Composite.cpp.obj",
+		"..\\..\\..\\x64\\UnrealGame\\Shipping\\Compositor\\CompositeKeyer.cpp.obj",
+		"..\\..\\..\\x64\\UnrealGame\\Shipping\\Compositor\\CompositeKeyerFromAsset.cpp.obj",
+		"..\\..\\..\\x64\\UnrealGame\\Shipping\\Compositor\\CompositeCaptureComponent2D.cpp.obj",
+		"..\\..\\..\\x64\\UnrealGame\\Shipping\\Compositor\\CompositePlanarReflectionComponent.cpp.obj",
+		"..\\..\\..\\x64\\UnrealGame\\Shipping\\Compositor\\SoftMaskCaptureComponent.cpp.obj",
+		"..\\..\\..\\x64\\UnrealGame\\Shipping\\Compositor\\CompositeColorGrade.cpp.obj",
+		"..\\..\\..\\x64\\UnrealGame\\Shipping\\Compositor\\CompositeViewExtension.cpp.obj",
+		"..\\..\\..\\x64\\UnrealGame\\Shipping\\Compositor\\CompositeWorldData.cpp.obj",
+		"..\\..\\..\\x64\\UnrealGame\\Shipping\\Compositor\\CompositorSubsystem.cpp.obj"
+	]
+}

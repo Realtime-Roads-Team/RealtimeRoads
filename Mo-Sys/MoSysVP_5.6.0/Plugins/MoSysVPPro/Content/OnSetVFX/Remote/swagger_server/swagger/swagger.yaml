@@ -1,0 +1,479 @@
+---
+swagger: "2.0"
+info:
+  description: "Mo-Sys VP Pro Remote REST API"
+  version: "1.0.0"
+  title: "Mo-Sys VP Pro Remote"
+basePath: "/v1"
+paths:
+  /play:
+    get:
+      tags:
+      - "VP Pro"
+      summary: "Check if master engine is in play"
+      description: "play (enabled/disabled)"
+      operationId: "get_play"
+      produces:
+      - "application/json"
+      parameters: []
+      responses:
+        "200":
+          description: "Success"
+          schema:
+            $ref: "#/definitions/play"
+        "400":
+          description: "Invalid play"
+        "404":
+          description: "Play was not found."
+      x-swagger-router-controller: "swagger_server.controllers.vp_pro_controller"
+    put:
+      tags:
+      - "VP Pro"
+      summary: "Start / Stop playing"
+      operationId: "set_play"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "play"
+        description: "play"
+        required: true
+        schema:
+          $ref: "#/definitions/play"
+      responses:
+        "200":
+          description: "Success"
+        "400":
+          description: "Invalid play"
+        "404":
+          description: "Play was not found"
+      x-swagger-router-controller: "swagger_server.controllers.vp_pro_controller"
+  /record:
+    get:
+      tags:
+      - "VP Pro"
+      summary: "Check if master engine is recording"
+      description: "record (enabled/disabled)"
+      operationId: "get_record"
+      produces:
+      - "application/json"
+      parameters: []
+      responses:
+        "200":
+          description: "Success"
+          schema:
+            $ref: "#/definitions/record"
+        "400":
+          description: "Invalid record"
+        "404":
+          description: "Record was not found."
+      x-swagger-router-controller: "swagger_server.controllers.vp_pro_controller"
+    put:
+      tags:
+      - "VP Pro"
+      summary: "Start/Stop recording on master engine"
+      operationId: "set_record"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "record"
+        description: "record"
+        required: true
+        schema:
+          $ref: "#/definitions/record"
+      responses:
+        "200":
+          description: "Success"
+        "400":
+          description: "Invalid record"
+        "404":
+          description: "Record was not found"
+      x-swagger-router-controller: "swagger_server.controllers.vp_pro_controller"
+  /status/{engineId}:
+    get:
+      tags:
+      - "VP Pro"
+      summary: "Check if engine is running"
+      description: "status (enabled/disabled)"
+      operationId: "get_status"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "engineId"
+        in: "path"
+        description: "Index of engine"
+        required: true
+        type: "integer"
+        minimum: 1
+      responses:
+        "200":
+          description: "Success"
+          schema:
+            $ref: "#/definitions/status"
+        "400":
+          description: "Invalid status"
+        "404":
+          description: "Status was not found."
+      x-swagger-router-controller: "swagger_server.controllers.vp_pro_controller"
+    put:
+      tags:
+      - "VP Pro"
+      summary: "Start/Stop running engine"
+      operationId: "set_status"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "status"
+        description: "status"
+        required: true
+        schema:
+          $ref: "#/definitions/status"
+      - name: "engineId"
+        in: "path"
+        description: "Index of engine"
+        required: true
+        type: "integer"
+        minimum: 1
+      responses:
+        "200":
+          description: "Success"
+        "400":
+          description: "Invalid status"
+        "404":
+          description: "Status was not found"
+      x-swagger-router-controller: "swagger_server.controllers.vp_pro_controller"
+  /restart/{engineId}:
+    put:
+      tags:
+      - "VP Pro"
+      summary: "Restart engine"
+      operationId: "set_restart"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "restart"
+        description: "restart"
+        required: true
+        schema:
+          $ref: "#/definitions/restart"
+      - name: "engineId"
+        in: "path"
+        description: "Index of engine"
+        required: true
+        type: "integer"
+        minimum: 1
+      responses:
+        "200":
+          description: "Success"
+        "400":
+          description: "Invalid restart"
+        "404":
+          description: "Restart was not found"
+      x-swagger-router-controller: "swagger_server.controllers.vp_pro_controller"
+  /trackingStatus/{engineId}:
+    get:
+      tags:
+      - "VP Pro"
+      summary: "Get VP Pro tracking status"
+      description: "VP Pro tracking status"
+      operationId: "get_tracking_status"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "engineId"
+        in: "path"
+        description: "Index of engine"
+        required: true
+        type: "integer"
+        minimum: 1
+      responses:
+        "200":
+          description: "Success"
+          schema:
+            $ref: "#/definitions/trackingStatus"
+        "400":
+          description: "Invalid trackingStatus"
+        "404":
+          description: "TrackingStatus was not found."
+      x-swagger-router-controller: "swagger_server.controllers.vp_pro_controller"
+  /lensStatus/{engineId}:
+    get:
+      tags:
+      - "VP Pro"
+      summary: "Get lens Status"
+      description: "Lens Status (enabled/disabled)"
+      operationId: "get_lens_status"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "engineId"
+        in: "path"
+        description: "Index of engine"
+        required: true
+        type: "integer"
+        minimum: 1
+      responses:
+        "200":
+          description: "Success"
+          schema:
+            $ref: "#/definitions/lensStatus"
+        "400":
+          description: "Invalid lensStatus"
+        "404":
+          description: "lensStatus was not found."
+      x-swagger-router-controller: "swagger_server.controllers.vp_pro_controller"
+  /videoStatus/{engineId}:
+    get:
+      tags:
+      - "VP Pro"
+      summary: "Get videoStatus"
+      description: "VideoStatus (enabled/disabled)"
+      operationId: "get_video_status"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "engineId"
+        in: "path"
+        description: "Index of engine"
+        required: true
+        type: "integer"
+        minimum: 1
+      responses:
+        "200":
+          description: "Success"
+          schema:
+            $ref: "#/definitions/videoStatus"
+        "400":
+          description: "Invalid videoStatus"
+        "404":
+          description: "VideoStatus was not found."
+      x-swagger-router-controller: "swagger_server.controllers.vp_pro_controller"
+  /level/{engineId}:
+    get:
+      tags:
+      - "VP Pro"
+      summary: "Get engine level"
+      description: "Engine level"
+      operationId: "get_level"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "engineId"
+        in: "path"
+        description: "Index of engine"
+        required: true
+        type: "integer"
+        minimum: 1
+      responses:
+        "200":
+          description: "Success"
+          schema:
+            $ref: "#/definitions/level"
+        "400":
+          description: "Invalid level"
+        "404":
+          description: "Level was not found."
+      x-swagger-router-controller: "swagger_server.controllers.vp_pro_controller"
+    put:
+      tags:
+      - "VP Pro"
+      summary: "Update engine level"
+      operationId: "set_level"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "level"
+        description: "level"
+        required: true
+        schema:
+          $ref: "#/definitions/level"
+      - name: "engineId"
+        in: "path"
+        description: "Index of engine"
+        required: true
+        type: "integer"
+        minimum: 1
+      responses:
+        "200":
+          description: "Success"
+        "400":
+          description: "Invalid level"
+        "404":
+          description: "Level was not found"
+      x-swagger-router-controller: "swagger_server.controllers.vp_pro_controller"
+  /bluePrint/{engineId}:
+    get:
+      tags:
+      - "VP Pro"
+      summary: "Get engine bluePrint"
+      description: "Engine bluePrint"
+      operationId: "get_blue_print"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "engineId"
+        in: "path"
+        description: "Index of engine"
+        required: true
+        type: "integer"
+        minimum: 1
+      responses:
+        "200":
+          description: "Success"
+          schema:
+            $ref: "#/definitions/bluePrint"
+        "400":
+          description: "Invalid bluePrint"
+        "404":
+          description: "BluePrint was not found."
+      x-swagger-router-controller: "swagger_server.controllers.vp_pro_controller"
+    put:
+      tags:
+      - "VP Pro"
+      summary: "Update bluePrint"
+      operationId: "set_blue_print"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "bluePrint"
+        description: "bluePrint"
+        required: true
+        schema:
+          $ref: "#/definitions/bluePrint"
+      - name: "engineId"
+        in: "path"
+        description: "Index of engine"
+        required: true
+        type: "integer"
+        minimum: 1
+      responses:
+        "200":
+          description: "Success"
+        "400":
+          description: "Invalid level"
+        "404":
+          description: "level was not found"
+      x-swagger-router-controller: "swagger_server.controllers.vp_pro_controller"
+definitions:
+  lensStatus:
+    type: "object"
+    properties:
+      lensStatus:
+        type: "boolean"
+        example: true
+    description: "Lens Status (enable/disable)"
+    example:
+      lensStatus: true
+  videoStatus:
+    type: "object"
+    properties:
+      videoStatus:
+        type: "boolean"
+        example: true
+    description: "videoStatus (enable/disable)"
+    example:
+      videoStatus: true
+  play:
+    type: "object"
+    properties:
+      play:
+        type: "boolean"
+        example: true
+    description: "play (enable/disable)"
+    example:
+      play: true
+  record:
+    type: "object"
+    properties:
+      record:
+        type: "boolean"
+        example: true
+    description: "record (enable/disable)"
+    example:
+      record: true
+  status:
+    type: "object"
+    properties:
+      status:
+        type: "boolean"
+        example: true
+    description: "status (enable/disable)"
+    example:
+      status: true
+  restart:
+    type: "object"
+    properties:
+      restart:
+        type: "boolean"
+        example: true
+    description: "restart (enable/disable)"
+  level:
+    type: "object"
+    properties:
+      level:
+        type: "string"
+        example: "level 999"
+    description: "Engine's level"
+    example:
+      level: "level 999"
+  bluePrint:
+    type: "object"
+    properties:
+      bluePrint:
+        type: "integer"
+        minimum: 1
+        maximum: 19
+    description: "Engine's bluePrint"
+    example:
+      bluePrint: 2
+  trackingStatus:
+    type: "object"
+    properties:
+      id:
+        type: "integer"
+        minimum: 0
+        maximum: 15
+      detail:
+        type: "string"
+        example: "Undefined"
+        enum:
+        - "Undefined"
+        - "Tracking"
+        - "Optical Good"
+        - "Optical Acceptable"
+        - "Optical Unreliable"
+        - "Optical Unstable"
+        - "Optical Lost"
+        - "Lost Too Few Stars"
+        - "LOC Searching"
+        - "Busy Or Waiting"
+        - "Busy Loading Map"
+        - "No Map Loaded"
+        - "Test Signal"
+        - "Mech Enc Only"
+        - "IO Error"
+        - "Internal Error"
+    description: "StarTracker tracking status"
+    example:
+      id: 1
+      detail: "Undefined"
+externalDocs:
+  description: "Find out more about Mo-Sys"
+  url: "http://mo-sys.com"

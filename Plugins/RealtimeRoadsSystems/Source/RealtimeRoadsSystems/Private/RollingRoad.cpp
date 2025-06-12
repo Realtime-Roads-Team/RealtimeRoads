@@ -19,13 +19,11 @@ void ARollingRoad::BeginPlay()
 {
 	Super::BeginPlay();
 
-#if WITH_EDITOR
 	if (GetWorld()->WorldType == EWorldType::Editor)
 	{
 		// In editor, defer to Tick
 		return;
 	}
-#endif
 
 	GenerateInitialChunks();
 }
@@ -34,14 +32,12 @@ void ARollingRoad::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 
-#if WITH_EDITOR
 	if (GEditor && GetWorld() && GetWorld()->WorldType == EWorldType::Editor)
 	{
 		UpdateChunksEditor(DeltaTime);
 		DrawDebugGizmos();
 	}
 	else
-#endif
 	{
 		UpdateChunksEditor(DeltaTime);
 	}

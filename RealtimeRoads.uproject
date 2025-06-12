@@ -39,6 +39,14 @@
 		{
 			"Name": "MetaHumanCharacter",
 			"Enabled": false
+		},
+		{
+			"Name": "StageMonitoring",
+			"Enabled": true
+		},
+		{
+			"Name": "Switchboard",
+			"Enabled": true
 		}
 	]
 }

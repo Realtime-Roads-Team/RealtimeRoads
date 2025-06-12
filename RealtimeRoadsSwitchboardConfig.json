@@ -1,0 +1,441 @@
+{
+    "project_name": "RealtimeRoadsSwitchboardConfig",
+    "uproject": "D:\\Unreal\\RealtimeRoads\\RealtimeRoads\\RealtimeRoads.uproject",
+    "engine_dir": "C:\\Program Files\\Epic Games\\UE_5.6\\Engine",
+    "engine_sync_method": "Use Existing (do not sync/build)",
+    "maps_path": "",
+    "maps_filter": "*.umap",
+    "content_plugin_filters": [],
+    "listener_exe": "SwitchboardListener",
+    "sblhelper_exe": "SwitchboardListenerHelper",
+    "tracing_enabled": false,
+    "tracing_args": "default,concert,messaging,tasks",
+    "tracing_stat_events": true,
+    "osc_server_port": 6000,
+    "p4_enabled": false,
+    "p4_sync_path": "",
+    "p4_engine_path": "",
+    "source_control_workspace": null,
+    "project_workspace": null,
+    "muserver_command_line_arguments": "",
+    "muserver_server_name": "RealtimeRoads_MU_Server",
+    "muserver_endpoint": ":9030",
+    "multiuser_exe": "UnrealMultiUserServer",
+    "multiuserslate_exe": "UnrealMultiUserSlateServer",
+    "muserver_auto_launch": true,
+    "muserver_slate_mode": true,
+    "muserver_clean_history": false,
+    "muserver_auto_build": true,
+    "muserver_auto_endpoint": true,
+    "muserver_multicast_endpoint": "230.0.0.1:6666",
+    "muserver_auto_join": true,
+    "muserver_archive_dir": "",
+    "muserver_working_dir": "",
+    "current_level": "/Game/TestingGround",
+    "devices": {
+        "KiPro": {
+            "settings": {
+                "is_recording_device": true
+            }
+        },
+        "LiveLinkFace": {
+            "settings": {
+                "osc_port": 8000
+            }
+        },
+        "LiveLinkHub": {
+            "settings": {
+                "primary_device_name": "",
+                "executable_name": "LiveLinkHub.exe",
+                "command_line_arguments": "",
+                "session_path": "",
+                "retrieve_logs": true,
+                "port": 2980
+            }
+        },
+        "Unreal": {
+            "settings": {
+                "is_recording_device": true,
+                "buffer_size": 1024,
+                "command_line_arguments": "",
+                "exec_cmds": [],
+                "dp_cvars": [],
+                "port": 2980,
+                "osc_port": 5500,
+                "roles_filename": "VPRoles.ini",
+                "stage_session_id": 0,
+                "editor_exe": "UnrealEditor.exe",
+                "max_gpu_count": 1,
+                "priority_modifier": "Normal",
+                "auto_decline_package_recovery": false,
+                "udpmessaging_unicast_endpoint": ":0",
+                "udpmessaging_extra_static_endpoints": "",
+                "udpmessaging_multicast_endpoint": "230.0.0.1:6666",
+                "log_download_dir": "",
+                "rsync_port": 8730,
+                "listener_inactive_timeout": 5,
+                "slate_allow_throttling": false,
+                "retrieve_logs": true,
+                "livelink_preset": "",
+                "mediaprofile": "",
+                "lock_gpu_clock": false,
+                "use_sync_filters": false,
+                "included_sync_categories": [
+                    [
+                        "6703e989-d912-451d-93ad-b48de748d282",
+                        "Content"
+                    ],
+                    [
+                        "f44b2d25-cbc0-4a8f-b6b3-e4a8125533dd",
+                        "Platform Support: Linux"
+                    ],
+                    [
+                        "5206ccee-9024-4e36-8b89-f5f5a7d288d2",
+                        "Platform Support: Win64"
+                    ],
+                    [
+                        "cfec942a-bb90-4f0c-accf-238ecaad9430",
+                        "Source Code"
+                    ]
+                ],
+                "custom_sync_view": "",
+                "force_holdout_if_ndisplay": true,
+                "editor_target_override": ""
+            },
+            "Death": {
+                "address": "192.168.56.20",
+                "roles": [],
+                "ddc_build_platforms": [
+                    "Windows",
+                    "WindowsEditor",
+                    "Linux",
+                    "LinuxEditor"
+                ],
+                "autojoin_mu_server": true,
+                "last_launch_command": "",
+                "last_log_path": "",
+                "last_trace_path": "",
+                "exclude_from_build": false,
+                "exclude_from_insights": false,
+                "last_sync_filter_hash": ""
+            }
+        },
+        "Motive": {
+            "settings": {
+                "is_recording_device": true,
+                "motive_port": 1510
+            }
+        },
+        "MultiplayerServer": {
+            "settings": {
+                "executable_path": "",
+                "level_path": "",
+                "multiplayer_port": 7777,
+                "port": 2980
+            }
+        },
+        "nDisplay": {
+            "settings": {
+                "ndisplay_cfg_file": "D:\\Unreal\\RealtimeRoads\\RealtimeRoads\\Plugins\\VirtualProductionTechPreViz\\Content\\WatersEdge.uasset",
+                "launch_mode": "Standalone (ICVFX)",
+                "packaged_game_path": "",
+                "overwrite_remote_ndc_asset": false,
+                "use_all_available_cores": false,
+                "texture_streaming": true,
+                "sound": false,
+                "loading_screen": false,
+                "allow_python": false,
+                "incremental_gc_reachability": true,
+                "render_api": "dx12",
+                "multiplayer_mode": "None",
+                "dedicated_server_address": "127.0.0.1",
+                "dedicated_server_port": "7777",
+                "render_mode": "Mono",
+                "render_sync_policy": "Config",
+                "executable_filename": "UnrealEditor.exe",
+                "ndisplay_cmd_args": "",
+                "ndisplay_exec_cmds": [],
+                "ndisplay_dp_cvars": [],
+                "ndisplay_unattended": true,
+                "max_gpu_count": 2,
+                "priority_modifier": "Normal",
+                "populated_config_itemDatas": [],
+                "minimize_before_launch": true,
+                "primary_device_name": "War",
+                "logging": {
+                    "LogConcert": null,
+                    "LogDisplayClusterCluster": null,
+                    "LogDisplayClusterConfig": null,
+                    "LogDisplayClusterEngine": null,
+                    "LogDisplayClusterGame": null,
+                    "LogDisplayClusterNetwork": null,
+                    "LogDisplayClusterRender": null,
+                    "LogDisplayClusterRenderSync": null,
+                    "LogDisplayClusterViewport": null,
+                    "LogDisplayClusterMedia": null,
+                    "LogDisplayClusterStageMonitoringDWM": null,
+                    "LogLiveLink": null,
+                    "LogRemoteControl": null
+                },
+                "udpmessaging_unicast_endpoint": ":0",
+                "udpmessaging_extra_static_endpoints": "",
+                "disable_ensures": true,
+                "disable_all_screen_messages": true,
+                "livelink_preset": "",
+                "graphics_adapter": "Config",
+                "mediaprofile": "",
+                "lock_gpu_clock": true,
+                "port": 2980,
+                "roles_filename": "VPRoles.ini",
+                "stage_session_id": 0
+            },
+            "War": {
+                "address": "192.168.56.24",
+                "roles": [],
+                "ddc_build_platforms": [
+                    "Windows",
+                    "WindowsEditor",
+                    "Linux",
+                    "LinuxEditor"
+                ],
+                "autojoin_mu_server": true,
+                "last_launch_command": "",
+                "last_log_path": "",
+                "last_trace_path": "",
+                "exclude_from_build": false,
+                "exclude_from_insights": false,
+                "last_sync_filter_hash": "",
+                "ue_command_line": "C:\\Program Files\\Epic Games\\UE_5.6\\Engine\\Binaries\\Win64\\UnrealEditor.exe \"D:\\Unreal\\RealtimeRoads\\RealtimeRoads\\RealtimeRoads.uproject\" -game  -messaging -dc_cluster -nosplash -fixedseed -NoVerifyGC -noxrstereo -xrtrackingonly -RemoteControlIsHeadless   -StageFriendlyName=\"War\"  -MaxGPUCount=2 -dc_cfg=\"D:\\Unreal\\RealtimeRoads\\RealtimeRoads\\Plugins\\VirtualProductionTechPreViz\\Content\\WatersEdge.uasset\" -dx12 -dc_dev_mono   -nosound -NoLoadingScreen -DisablePython -dc_node=War Log=War.log -ini:Engine:[/Script/Engine.Engine]:GameEngine=/Script/DisplayCluster.DisplayClusterGameEngine,[/Script/Engine.Engine]:GameViewportClientClassName=/Script/DisplayCluster.DisplayClusterViewportClient,[/Script/Engine.UserInterfaceSettings]:bAllowHighDPIInGameMode=True -ini:Game:[/Script/EngineSettings.GeneralProjectSettings]:bUseBorderlessWindow=True -ini:Input:[/Script/Engine.InputSettings]:DefaultPlayerInputClass=/Script/DisplayCluster.DisplayClusterPlayerInput -unattended -NoScreenMessages -handleensurepercent=0 -UDPMESSAGING_TRANSPORT_MULTICAST=\"230.0.0.1:6666\" -UDPMESSAGING_TRANSPORT_UNICAST=\"192.168.56.24:0\" -UDPMESSAGING_TRANSPORT_STATIC=\"192.168.56.20:9030\" -ExecCmds=\"DisableAllScreenMessages\" -fullscreen -CONCERTRETRYAUTOCONNECTONERROR -CONCERTAUTOCONNECT -CONCERTSERVER=\"RealtimeRoads_MU_Server_BzU0W8LWRlJb\" -CONCERTSESSION=\"RealtimeRoadsMUS\" -CONCERTDISPLAYNAME=\"War\" -CONCERTISHEADLESS -DPCVars=\"Slate.bAllowNotifications=0,p.Chaos.Solver.Deterministic=1,LevelInstance.ForceEditorWorldMode=1,gc.AllowIncrementalReachability=1,r.pso.evictiontime=3600\" ",
+                "window_position": [
+                    0,
+                    0
+                ],
+                "window_resolution": [
+                    3840,
+                    2160
+                ],
+                "fullscreen": true,
+                "headless": false,
+                "config_graphics_adapter": 0
+            },
+            "War_OS": {
+                "address": "192.168.56.24",
+                "roles": [],
+                "ddc_build_platforms": [
+                    "Windows",
+                    "WindowsEditor",
+                    "Linux",
+                    "LinuxEditor"
+                ],
+                "autojoin_mu_server": true,
+                "last_launch_command": "",
+                "last_log_path": "",
+                "last_trace_path": "",
+                "exclude_from_build": false,
+                "exclude_from_insights": false,
+                "last_sync_filter_hash": "",
+                "ue_command_line": "C:\\Program Files\\Epic Games\\UE_5.6\\Engine\\Binaries\\Win64\\UnrealEditor.exe \"D:\\Unreal\\RealtimeRoads\\RealtimeRoads\\RealtimeRoads.uproject\" -game  -messaging -dc_cluster -nosplash -fixedseed -NoVerifyGC -noxrstereo -xrtrackingonly -RemoteControlIsHeadless   -StageFriendlyName=\"War_OS\"  -MaxGPUCount=2 -dc_cfg=\"D:\\Unreal\\RealtimeRoads\\RealtimeRoads\\Plugins\\VirtualProductionTechPreViz\\Content\\WatersEdge.uasset\" -dx12 -dc_dev_mono   -nosound -NoLoadingScreen -DisablePython -dc_node=War_OS Log=War_OS.log -ini:Engine:[/Script/Engine.Engine]:GameEngine=/Script/DisplayCluster.DisplayClusterGameEngine,[/Script/Engine.Engine]:GameViewportClientClassName=/Script/DisplayCluster.DisplayClusterViewportClient,[/Script/Engine.UserInterfaceSettings]:bAllowHighDPIInGameMode=True -ini:Game:[/Script/EngineSettings.GeneralProjectSettings]:bUseBorderlessWindow=True -ini:Input:[/Script/Engine.InputSettings]:DefaultPlayerInputClass=/Script/DisplayCluster.DisplayClusterPlayerInput -unattended -NoScreenMessages -handleensurepercent=0 -UDPMESSAGING_TRANSPORT_MULTICAST=\"230.0.0.1:6666\" -UDPMESSAGING_TRANSPORT_UNICAST=\"192.168.56.24:0\" -UDPMESSAGING_TRANSPORT_STATIC=\"192.168.56.20:9030\" -ExecCmds=\"DisableAllScreenMessages\" -windowed -forceres WinX=3840 WinY=0 ResX=1920 ResY=1080 -CONCERTRETRYAUTOCONNECTONERROR -CONCERTAUTOCONNECT -CONCERTSERVER=\"RealtimeRoads_MU_Server_BzU0W8LWRlJb\" -CONCERTSESSION=\"RealtimeRoadsMUS\" -CONCERTDISPLAYNAME=\"War_OS\" -CONCERTISHEADLESS -DPCVars=\"Slate.bAllowNotifications=0,p.Chaos.Solver.Deterministic=1,LevelInstance.ForceEditorWorldMode=1,gc.AllowIncrementalReachability=1,r.pso.evictiontime=3600\" ",
+                "window_position": [
+                    3840,
+                    0
+                ],
+                "window_resolution": [
+                    1920,
+                    1080
+                ],
+                "fullscreen": false,
+                "headless": true,
+                "config_graphics_adapter": 1
+            },
+            "Famine": {
+                "address": "192.168.56.29",
+                "roles": [],
+                "ddc_build_platforms": [
+                    "Windows",
+                    "WindowsEditor",
+                    "Linux",
+                    "LinuxEditor"
+                ],
+                "autojoin_mu_server": true,
+                "last_launch_command": "",
+                "last_log_path": "",
+                "last_trace_path": "",
+                "exclude_from_build": false,
+                "exclude_from_insights": false,
+                "last_sync_filter_hash": "",
+                "ue_command_line": "C:\\Program Files\\Epic Games\\UE_5.6\\Engine\\Binaries\\Win64\\UnrealEditor.exe \"D:\\Unreal\\RealtimeRoads\\RealtimeRoads\\RealtimeRoads.uproject\" -game  -messaging -dc_cluster -nosplash -fixedseed -NoVerifyGC -noxrstereo -xrtrackingonly -RemoteControlIsHeadless   -StageFriendlyName=\"Famine\"  -MaxGPUCount=2 -dc_cfg=\"D:\\Unreal\\RealtimeRoads\\RealtimeRoads\\Plugins\\VirtualProductionTechPreViz\\Content\\WatersEdge.uasset\" -dx12 -dc_dev_mono   -nosound -NoLoadingScreen -DisablePython -dc_node=Famine Log=Famine.log -ini:Engine:[/Script/Engine.Engine]:GameEngine=/Script/DisplayCluster.DisplayClusterGameEngine,[/Script/Engine.Engine]:GameViewportClientClassName=/Script/DisplayCluster.DisplayClusterViewportClient,[/Script/Engine.UserInterfaceSettings]:bAllowHighDPIInGameMode=True -ini:Game:[/Script/EngineSettings.GeneralProjectSettings]:bUseBorderlessWindow=True -ini:Input:[/Script/Engine.InputSettings]:DefaultPlayerInputClass=/Script/DisplayCluster.DisplayClusterPlayerInput -unattended -NoScreenMessages -handleensurepercent=0 -UDPMESSAGING_TRANSPORT_MULTICAST=\"230.0.0.1:6666\" -UDPMESSAGING_TRANSPORT_UNICAST=\"192.168.56.29:0\" -UDPMESSAGING_TRANSPORT_STATIC=\"192.168.56.20:9030\" -ExecCmds=\"DisableAllScreenMessages\" -fullscreen -CONCERTRETRYAUTOCONNECTONERROR -CONCERTAUTOCONNECT -CONCERTSERVER=\"RealtimeRoads_MU_Server_BzU0W8LWRlJb\" -CONCERTSESSION=\"RealtimeRoadsMUS\" -CONCERTDISPLAYNAME=\"Famine\" -CONCERTISHEADLESS -DPCVars=\"Slate.bAllowNotifications=0,p.Chaos.Solver.Deterministic=1,LevelInstance.ForceEditorWorldMode=1,gc.AllowIncrementalReachability=1,r.pso.evictiontime=3600\" ",
+                "window_position": [
+                    0,
+                    0
+                ],
+                "window_resolution": [
+                    3840,
+                    2160
+                ],
+                "fullscreen": true,
+                "headless": false,
+                "config_graphics_adapter": 0
+            },
+            "Famine_OS": {
+                "address": "192.168.56.29",
+                "roles": [],
+                "ddc_build_platforms": [
+                    "Windows",
+                    "WindowsEditor",
+                    "Linux",
+                    "LinuxEditor"
+                ],
+                "autojoin_mu_server": true,
+                "last_launch_command": "",
+                "last_log_path": "",
+                "last_trace_path": "",
+                "exclude_from_build": false,
+                "exclude_from_insights": false,
+                "last_sync_filter_hash": "",
+                "ue_command_line": "C:\\Program Files\\Epic Games\\UE_5.6\\Engine\\Binaries\\Win64\\UnrealEditor.exe \"D:\\Unreal\\RealtimeRoads\\RealtimeRoads\\RealtimeRoads.uproject\" -game  -messaging -dc_cluster -nosplash -fixedseed -NoVerifyGC -noxrstereo -xrtrackingonly -RemoteControlIsHeadless   -StageFriendlyName=\"Famine_OS\"  -MaxGPUCount=2 -dc_cfg=\"D:\\Unreal\\RealtimeRoads\\RealtimeRoads\\Plugins\\VirtualProductionTechPreViz\\Content\\WatersEdge.uasset\" -dx12 -dc_dev_mono   -nosound -NoLoadingScreen -DisablePython -dc_node=Famine_OS Log=Famine_OS.log -ini:Engine:[/Script/Engine.Engine]:GameEngine=/Script/DisplayCluster.DisplayClusterGameEngine,[/Script/Engine.Engine]:GameViewportClientClassName=/Script/DisplayCluster.DisplayClusterViewportClient,[/Script/Engine.UserInterfaceSettings]:bAllowHighDPIInGameMode=True -ini:Game:[/Script/EngineSettings.GeneralProjectSettings]:bUseBorderlessWindow=True -ini:Input:[/Script/Engine.InputSettings]:DefaultPlayerInputClass=/Script/DisplayCluster.DisplayClusterPlayerInput -unattended -NoScreenMessages -handleensurepercent=0 -UDPMESSAGING_TRANSPORT_MULTICAST=\"230.0.0.1:6666\" -UDPMESSAGING_TRANSPORT_UNICAST=\"192.168.56.29:0\" -UDPMESSAGING_TRANSPORT_STATIC=\"192.168.56.20:9030\" -ExecCmds=\"DisableAllScreenMessages\" -windowed -forceres WinX=3840 WinY=0 ResX=1920 ResY=1080 -CONCERTRETRYAUTOCONNECTONERROR -CONCERTAUTOCONNECT -CONCERTSERVER=\"RealtimeRoads_MU_Server_BzU0W8LWRlJb\" -CONCERTSESSION=\"RealtimeRoadsMUS\" -CONCERTDISPLAYNAME=\"Famine_OS\" -CONCERTISHEADLESS -DPCVars=\"Slate.bAllowNotifications=0,p.Chaos.Solver.Deterministic=1,LevelInstance.ForceEditorWorldMode=1,gc.AllowIncrementalReachability=1,r.pso.evictiontime=3600\" ",
+                "window_position": [
+                    3840,
+                    0
+                ],
+                "window_resolution": [
+                    1920,
+                    1080
+                ],
+                "fullscreen": false,
+                "headless": true,
+                "config_graphics_adapter": 1
+            },
+            "Pestilence": {
+                "address": "192.168.56.4",
+                "roles": [],
+                "ddc_build_platforms": [
+                    "Windows",
+                    "WindowsEditor",
+                    "Linux",
+                    "LinuxEditor"
+                ],
+                "autojoin_mu_server": true,
+                "last_launch_command": "",
+                "last_log_path": "",
+                "last_trace_path": "",
+                "exclude_from_build": false,
+                "exclude_from_insights": false,
+                "last_sync_filter_hash": "",
+                "ue_command_line": "C:\\Program Files\\Epic Games\\UE_5.6\\Engine\\Binaries\\Win64\\UnrealEditor.exe \"D:\\Unreal\\RealtimeRoads\\RealtimeRoads\\RealtimeRoads.uproject\" -game  -messaging -dc_cluster -nosplash -fixedseed -NoVerifyGC -noxrstereo -xrtrackingonly -RemoteControlIsHeadless   -StageFriendlyName=\"Pestilence\"  -MaxGPUCount=2 -dc_cfg=\"D:\\Unreal\\RealtimeRoads\\RealtimeRoads\\Plugins\\VirtualProductionTechPreViz\\Content\\WatersEdge.uasset\" -dx12 -dc_dev_mono   -nosound -NoLoadingScreen -DisablePython -dc_node=Pestilence Log=Pestilence.log -ini:Engine:[/Script/Engine.Engine]:GameEngine=/Script/DisplayCluster.DisplayClusterGameEngine,[/Script/Engine.Engine]:GameViewportClientClassName=/Script/DisplayCluster.DisplayClusterViewportClient,[/Script/Engine.UserInterfaceSettings]:bAllowHighDPIInGameMode=True -ini:Game:[/Script/EngineSettings.GeneralProjectSettings]:bUseBorderlessWindow=True -ini:Input:[/Script/Engine.InputSettings]:DefaultPlayerInputClass=/Script/DisplayCluster.DisplayClusterPlayerInput -unattended -NoScreenMessages -handleensurepercent=0 -UDPMESSAGING_TRANSPORT_MULTICAST=\"230.0.0.1:6666\" -UDPMESSAGING_TRANSPORT_UNICAST=\"192.168.56.4:0\" -UDPMESSAGING_TRANSPORT_STATIC=\"192.168.56.20:9030\" -ExecCmds=\"DisableAllScreenMessages\" -fullscreen -CONCERTRETRYAUTOCONNECTONERROR -CONCERTAUTOCONNECT -CONCERTSERVER=\"RealtimeRoads_MU_Server_BzU0W8LWRlJb\" -CONCERTSESSION=\"RealtimeRoadsMUS\" -CONCERTDISPLAYNAME=\"Pestilence\" -CONCERTISHEADLESS -DPCVars=\"Slate.bAllowNotifications=0,p.Chaos.Solver.Deterministic=1,LevelInstance.ForceEditorWorldMode=1,gc.AllowIncrementalReachability=1,r.pso.evictiontime=3600\" ",
+                "window_position": [
+                    0,
+                    0
+                ],
+                "window_resolution": [
+                    3840,
+                    2160
+                ],
+                "fullscreen": true,
+                "headless": false,
+                "config_graphics_adapter": 0
+            },
+            "Pestilence_OS": {
+                "address": "192.168.56.4",
+                "roles": [],
+                "ddc_build_platforms": [
+                    "Windows",
+                    "WindowsEditor",
+                    "Linux",
+                    "LinuxEditor"
+                ],
+                "autojoin_mu_server": true,
+                "last_launch_command": "",
+                "last_log_path": "",
+                "last_trace_path": "",
+                "exclude_from_build": false,
+                "exclude_from_insights": false,
+                "last_sync_filter_hash": "",
+                "ue_command_line": "C:\\Program Files\\Epic Games\\UE_5.6\\Engine\\Binaries\\Win64\\UnrealEditor.exe \"D:\\Unreal\\RealtimeRoads\\RealtimeRoads\\RealtimeRoads.uproject\" -game  -messaging -dc_cluster -nosplash -fixedseed -NoVerifyGC -noxrstereo -xrtrackingonly -RemoteControlIsHeadless   -StageFriendlyName=\"Pestilence_OS\"  -MaxGPUCount=2 -dc_cfg=\"D:\\Unreal\\RealtimeRoads\\RealtimeRoads\\Plugins\\VirtualProductionTechPreViz\\Content\\WatersEdge.uasset\" -dx12 -dc_dev_mono   -nosound -NoLoadingScreen -DisablePython -dc_node=Pestilence_OS Log=Pestilence_OS.log -ini:Engine:[/Script/Engine.Engine]:GameEngine=/Script/DisplayCluster.DisplayClusterGameEngine,[/Script/Engine.Engine]:GameViewportClientClassName=/Script/DisplayCluster.DisplayClusterViewportClient,[/Script/Engine.UserInterfaceSettings]:bAllowHighDPIInGameMode=True -ini:Game:[/Script/EngineSettings.GeneralProjectSettings]:bUseBorderlessWindow=True -ini:Input:[/Script/Engine.InputSettings]:DefaultPlayerInputClass=/Script/DisplayCluster.DisplayClusterPlayerInput -unattended -NoScreenMessages -handleensurepercent=0 -UDPMESSAGING_TRANSPORT_MULTICAST=\"230.0.0.1:6666\" -UDPMESSAGING_TRANSPORT_UNICAST=\"192.168.56.4:0\" -UDPMESSAGING_TRANSPORT_STATIC=\"192.168.56.20:9030\" -ExecCmds=\"DisableAllScreenMessages\" -windowed -forceres WinX=3840 WinY=0 ResX=1920 ResY=1080 -CONCERTRETRYAUTOCONNECTONERROR -CONCERTAUTOCONNECT -CONCERTSERVER=\"RealtimeRoads_MU_Server_BzU0W8LWRlJb\" -CONCERTSESSION=\"RealtimeRoadsMUS\" -CONCERTDISPLAYNAME=\"Pestilence_OS\" -CONCERTISHEADLESS -DPCVars=\"Slate.bAllowNotifications=0,p.Chaos.Solver.Deterministic=1,LevelInstance.ForceEditorWorldMode=1,gc.AllowIncrementalReachability=1,r.pso.evictiontime=3600\" ",
+                "window_position": [
+                    3840,
+                    0
+                ],
+                "window_resolution": [
+                    1920,
+                    1080
+                ],
+                "fullscreen": false,
+                "headless": true,
+                "config_graphics_adapter": 1
+            }
+        },
+        "nDisplayTest": {
+            "settings": {
+                "ndisplay_test_file": "",
+                "game_target_override": "",
+                "editor_target_override": "",
+                "test_build_info": "",
+                "test_multi_node_delay": 5,
+                "test_run_boot_editor": false,
+                "report_24fps_format": false,
+                "ndisplay_cfg_file": "D:\\Unreal\\RealtimeRoads\\RealtimeRoads\\Plugins\\VirtualProductionTechPreViz\\Content\\WatersEdge.uasset",
+                "launch_mode": "Standalone (ICVFX)",
+                "packaged_game_path": "",
+                "overwrite_remote_ndc_asset": false,
+                "use_all_available_cores": false,
+                "texture_streaming": true,
+                "sound": false,
+                "loading_screen": false,
+                "allow_python": false,
+                "incremental_gc_reachability": true,
+                "render_api": "dx12",
+                "multiplayer_mode": "None",
+                "dedicated_server_address": "127.0.0.1",
+                "dedicated_server_port": "7777",
+                "render_mode": "Mono",
+                "render_sync_policy": "Config",
+                "executable_filename": "UnrealEditor.exe",
+                "ndisplay_cmd_args": "",
+                "ndisplay_exec_cmds": [],
+                "ndisplay_dp_cvars": [],
+                "ndisplay_unattended": true,
+                "max_gpu_count": 2,
+                "priority_modifier": "Normal",
+                "populated_config_itemDatas": [],
+                "minimize_before_launch": true,
+                "primary_device_name": "War",
+                "logging": {
+                    "LogConcert": null,
+                    "LogDisplayClusterCluster": null,
+                    "LogDisplayClusterConfig": null,
+                    "LogDisplayClusterEngine": null,
+                    "LogDisplayClusterGame": null,
+                    "LogDisplayClusterNetwork": null,
+                    "LogDisplayClusterRender": null,
+                    "LogDisplayClusterRenderSync": null,
+                    "LogDisplayClusterViewport": null,
+                    "LogDisplayClusterMedia": null,
+                    "LogDisplayClusterStageMonitoringDWM": null,
+                    "LogLiveLink": null,
+                    "LogRemoteControl": null
+                },
+                "udpmessaging_unicast_endpoint": ":0",
+                "udpmessaging_extra_static_endpoints": "",
+                "disable_ensures": true,
+                "disable_all_screen_messages": true,
+                "livelink_preset": "",
+                "graphics_adapter": "Config",
+                "mediaprofile": "",
+                "lock_gpu_clock": true,
+                "port": 2980,
+                "roles_filename": "VPRoles.ini",
+                "stage_session_id": 0
+            }
+        },
+        "Shogun": {
+            "settings": {
+                "is_recording_device": true
+            }
+        },
+        "SoundDevices": {
+            "settings": {
+                "is_recording_device": true
+            }
+        }
+    }
+}

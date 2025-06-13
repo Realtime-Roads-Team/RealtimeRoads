@@ -72,7 +72,6 @@ Plugins/*/Intermediate/*
 
 # Cache files for the editor to use
 DerivedDataCache/*
-/Plugins/HoudiniEngineForUnreal
 /.idea
 
 /HoudiniHDAs/backup
@@ -84,6 +83,3 @@ DerivedDataCache/*
 /Content/RealtimeRoads/TestAssets
 /Content/Megascans
 /Content/MSPresets
-/Plugins/VirtualProductionTechPreViz
-/Plugins/nDisplayMeshTool
-/Plugins/MosysLiveLink

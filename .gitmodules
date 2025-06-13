@@ -1,0 +1,12 @@
+[submodule "Plugins/nDisplayMeshTool"]
+	path = Plugins/nDisplayMeshTool
+	url = https://github.com/Realtime-Roads-Team/nDisplayMeshTool.git
+[submodule "Plugins/MosysLiveLink"]
+	path = Plugins/MosysLiveLink
+	url = https://github.com/Realtime-Roads-Team/MosysLiveLink.git
+[submodule "Plugins/VirtualProductionTechPreViz"]
+	path = Plugins/VirtualProductionTechPreViz
+	url = https://github.com/Realtime-Roads-Team/VirtualProductionTechPreViz.git
+[submodule "Plugins/HoudiniEngineForUnreal"]
+	path = Plugins/HoudiniEngineForUnreal
+	url = https://github.com/Realtime-Roads-Team/HoudiniEngineForUnreal.git

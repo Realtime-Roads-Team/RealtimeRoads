@@ -12,4 +12,4 @@
 	url = https://github.com/Realtime-Roads-Team/HoudiniEngineForUnreal.git
 [submodule "Plugins/ViconToMetahuman"]
 	path = Plugins/ViconToMetahuman
-	url = https://github.com/Realtime-Roads-Team/ViconToMetahuman.git
+	url = https://github.com/Realtime-Roads-Team/ViconToMetahuman

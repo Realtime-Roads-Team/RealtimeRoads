@@ -38,7 +38,7 @@
 		},
 		{
 			"Name": "MetaHumanCharacter",
-			"Enabled": false
+			"Enabled": true
 		},
 		{
 			"Name": "StageMonitoring",

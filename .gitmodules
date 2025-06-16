@@ -10,3 +10,6 @@
 [submodule "Plugins/HoudiniEngineForUnreal"]
 	path = Plugins/HoudiniEngineForUnreal
 	url = https://github.com/Realtime-Roads-Team/HoudiniEngineForUnreal.git
+[submodule "Plugins/ViconToMetahuman"]
+	path = Plugins/ViconToMetahuman
+	url = https://github.com/Realtime-Roads-Team/ViconToMetahuman.git

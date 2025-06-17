@@ -1,0 +1,23 @@
+{
+	"FileVersion": 3,
+	"Version": 1,
+	"VersionName": "1.0",
+	"FriendlyName": "HoudiniEngineExamples",
+	"Description": "Content Examples for the Houdini Engine for Unreal plugin.",
+	"Category": "Procedural",
+	"CreatedBy": "Side Effects Software Inc.",
+	"CreatedByURL": "https://www.sidefx.com/",
+	"DocsURL": "https://www.sidefx.com/docs/houdini/unreal/examplesintro.html",
+	"MarketplaceURL": "",
+	"SupportURL": "https://www.sidefx.com/bugs/submit/",
+	"CanContainContent": true,
+	"IsBetaVersion": false,
+	"IsExperimentalVersion": false,
+	"Installed": true,
+	"Plugins": [
+		{
+			"Name": "HoudiniEngine",
+			"Enabled": true
+		}
+	]
+}

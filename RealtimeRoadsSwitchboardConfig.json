@@ -31,7 +31,7 @@
     "muserver_auto_join": true,
     "muserver_archive_dir": "",
     "muserver_working_dir": "",
-    "current_level": "/Game/TestingGround",
+    "current_level": null,
     "devices": {
         "KiPro": {
             "settings": {
@@ -216,7 +216,7 @@
                 ],
                 "fullscreen": true,
                 "headless": false,
-                "config_graphics_adapter": 0
+                "config_graphics_adapter": -1
             },
             "War_OS": {
                 "address": "192.168.56.24",
@@ -244,8 +244,8 @@
                     1080
                 ],
                 "fullscreen": false,
-                "headless": true,
-                "config_graphics_adapter": 1
+                "headless": false,
+                "config_graphics_adapter": -1
             },
             "Famine": {
                 "address": "192.168.56.29",
@@ -274,7 +274,7 @@
                 ],
                 "fullscreen": true,
                 "headless": false,
-                "config_graphics_adapter": 0
+                "config_graphics_adapter": -1
             },
             "Famine_OS": {
                 "address": "192.168.56.29",
@@ -302,8 +302,8 @@
                     1080
                 ],
                 "fullscreen": false,
-                "headless": true,
-                "config_graphics_adapter": 1
+                "headless": false,
+                "config_graphics_adapter": -1
             },
             "Pestilence": {
                 "address": "192.168.56.4",
@@ -332,7 +332,7 @@
                 ],
                 "fullscreen": true,
                 "headless": false,
-                "config_graphics_adapter": 0
+                "config_graphics_adapter": -1
             },
             "Pestilence_OS": {
                 "address": "192.168.56.4",
@@ -360,8 +360,8 @@
                     1080
                 ],
                 "fullscreen": false,
-                "headless": true,
-                "config_graphics_adapter": 1
+                "headless": false,
+                "config_graphics_adapter": -1
             }
         },
         "nDisplayTest": {

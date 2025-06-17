@@ -1,5 +1,6 @@
 // Copyright Epic Games, Inc. All Rights Reserved.
 
+using System.IO;
 using UnrealBuildTool;
 
 public class RealtimeRoadsSystems : ModuleRules
@@ -11,8 +12,7 @@ public class RealtimeRoadsSystems : ModuleRules
 		// Public include paths (add if needed)
 		PublicIncludePaths.AddRange(new string[]
 		{
-			// "RealtimeRoadsSystems/Public"
-		});
+        });
 
 		// Private include paths (add if needed)
 		PrivateIncludePaths.AddRange(new string[]
@@ -31,6 +31,7 @@ public class RealtimeRoadsSystems : ModuleRules
 			"HoudiniEngineRuntime",
             "HoudiniEngineEditor",
             "HoudiniEngine",
+            "ProceduralMeshComponent",
         });
 
 		// Editor-only modules

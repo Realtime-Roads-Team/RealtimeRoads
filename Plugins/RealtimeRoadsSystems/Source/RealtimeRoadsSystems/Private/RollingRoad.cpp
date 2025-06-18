@@ -35,7 +35,6 @@ void ARollingRoad::Tick(float DeltaTime)
 	if (GEditor && GetWorld() && GetWorld()->WorldType == EWorldType::Editor)
 	{
 		UpdateChunksEditor(DeltaTime);
-		DrawDebugGizmos();
 	}
 	else
 	{
@@ -133,38 +132,4 @@ float ARollingRoad::GetChunkSpeedCms() const
 {
 	// Convert km/h → cm/s: (km/h * 100000) / 3600
 	return (ChunkSpeedKmph * 100000.f) / 3600.f;
-}
-
-void ARollingRoad::DrawDebugGizmos()
-{
-	UWorld* World = GetWorld();
-	if (!World) return;
-
-	const FVector Origin = GetActorLocation();
-	const FVector RearClip = Origin + MovementDirection * -RearCullingDistance;
-	const FVector FrontClip = Origin + MovementDirection * FrontCullingDistance;
-
-	// Draw origin sphere
-	DrawDebugSphere(World, Origin, 50.f, 12, FColor::White, false, -1.f, 0, 2.f);
-
-	// Draw movement direction
-	DrawDebugDirectionalArrow(World, Origin, Origin + MovementDirection * 500.f, 200.f, FColor::Blue, false, -1.f, 0, 3.f);
-
-	// Draw rear and front clipping indicators
-	DrawDebugLine(World, RearClip, RearClip + FVector(0, 0, 200), FColor::Green, false, -1.f, 0, 3.f);
-	DrawDebugLine(World, FrontClip, FrontClip + FVector(0, 0, 200), FColor::Red, false, -1.f, 0, 3.f);
-
-	DrawDebugString(World, RearClip + FVector(0, 0, 220), TEXT("Rear Clip"), nullptr, FColor::Green, 0.f, true);
-	DrawDebugString(World, FrontClip + FVector(0, 0, 220), TEXT("Front Clip"), nullptr, FColor::Red, 0.f, true);
-
-	// Draw chunk bounding boxes
-	for (ARollingRoadSection* Chunk : SpawnedChunks)
-	{
-		if (!IsValid(Chunk)) continue;
-
-		FVector Center = Chunk->GetActorLocation();
-		FVector Extent(ChunkSize.X * 0.5f, ChunkSize.Y * 0.5f, 100.f);
-
-		DrawDebugBox(World, Center, Extent, Chunk->GetActorRotation().Quaternion(), FColor::Cyan, false, -1.f, 0, 2.f);
-	}
 }

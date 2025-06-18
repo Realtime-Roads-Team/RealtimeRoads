@@ -41,9 +41,6 @@ public:
 	UFUNCTION(CallInEditor, Category = "RollingRoad")
 	void UpdateChunksEditor(float DeltaTime);
 
-	UFUNCTION(CallInEditor, Category = "RollingRoad")
-	void DrawDebugGizmos();
-
 
 public:
 
